@@ -1,4 +1,12 @@
 Soundcrowd::Application.routes.draw do
+  get "projects/index"
+
+  get "projects/new"
+
+  get "projects/edit"
+
+  get "projects/view"
+
   get "home/index"
   root :to => "home#index"
 
