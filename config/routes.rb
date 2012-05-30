@@ -1,6 +1,8 @@
 Soundcrowd::Application.routes.draw do
   get "projects/index"
 
+  match "projects/", :to =>'projects#index'
+  
   get "projects/new"
 
   get "projects/edit"
