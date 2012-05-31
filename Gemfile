@@ -6,7 +6,7 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby'
-
+gem 'sass'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +21,21 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :development do
+  gem 'rspec-rails', ">= 2.8.1"
+  gem 'guard-rspec'
+end
+
+group :test do
+  gem 'rspec-rails', ">= 2.8.1"
+  gem "factory_girl_rails", ">= 1.6.0"
+  gem "cucumber-rails", ">= 1.2.1"
+  gem "database_cleaner"
+  gem 'spork', '0.9.0'
+  gem 'capybara'
+  gem 'growl'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

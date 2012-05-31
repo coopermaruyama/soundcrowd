@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<header>
+		<%= image_tag("logo.png", :alt => 'SoundCrowd', :class=> 'logo') %>
+	</header>
+	<div class="main">
+		<%= yield %>
+	</div>
 </body>
 </html>
