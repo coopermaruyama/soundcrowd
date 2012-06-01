@@ -1,12 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  follwer_id: 1
-  followed_id: 1
-
-two:
-  follwer_id: 1
-  followed_id: 1
+class Follow < ActiveRecord::Base
+end
 # == Schema Information
 #
 # Table name: follows

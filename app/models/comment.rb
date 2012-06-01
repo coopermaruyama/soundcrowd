@@ -1,16 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  comment: MyString
-  timestamp: 2012-05-30 13:35:13
-  reply_of: 1
-  track_timestamp: 1
-
-two:
-  comment: MyString
-  timestamp: 2012-05-30 13:35:13
-  reply_of: 1
-  track_timestamp: 1
+class Comment < ActiveRecord::Base
+end
 # == Schema Information
 #
 # Table name: comments

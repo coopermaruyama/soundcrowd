@@ -1,12 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  tag_id: 1
-  tagged_track: 1
-
-two:
-  tag_id: 1
-  tagged_track: 1
+class TagRelation < ActiveRecord::Base
+end
 # == Schema Information
 #
 # Table name: tag_relations

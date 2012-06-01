@@ -1,20 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  creator: 1
-  votes: 1
-  forks: 1
-  original: false
-  forked_from: 1
-  created_at: 2012-05-30 13:25:27
-
-two:
-  creator: 1
-  votes: 1
-  forks: 1
-  original: false
-  forked_from: 1
-  created_at: 2012-05-30 13:25:27
+class Track < ActiveRecord::Base
+end
 # == Schema Information
 #
 # Table name: tracks

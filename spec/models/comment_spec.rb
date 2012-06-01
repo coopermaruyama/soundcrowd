@@ -1,16 +1,8 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+require 'spec_helper'
 
-one:
-  comment: MyString
-  timestamp: 2012-05-30 13:35:13
-  reply_of: 1
-  track_timestamp: 1
-
-two:
-  comment: MyString
-  timestamp: 2012-05-30 13:35:13
-  reply_of: 1
-  track_timestamp: 1
+describe Comment do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
 # == Schema Information
 #
 # Table name: comments

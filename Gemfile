@@ -24,12 +24,14 @@ gem 'jquery-rails'
 
 group :development do
   gem 'rspec-rails', ">= 2.8.1"
+  gem "factory_girl_rails", '3.3.0'
   gem 'guard-rspec'
+  gem 'annotate', '~> 2.4.1.beta'
 end
 
 group :test do
   gem 'rspec-rails', ">= 2.8.1"
-  gem "factory_girl_rails", ">= 1.6.0"
+  gem "factory_girl_rails", '3.3.0'
   gem "cucumber-rails", ">= 1.2.1"
   gem "database_cleaner"
   gem 'spork', '0.9.0'

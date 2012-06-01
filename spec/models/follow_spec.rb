@@ -1,12 +1,8 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+require 'spec_helper'
 
-one:
-  follwer_id: 1
-  followed_id: 1
-
-two:
-  follwer_id: 1
-  followed_id: 1
+describe Follow do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
 # == Schema Information
 #
 # Table name: follows

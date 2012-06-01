@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530212104) do
+ActiveRecord::Schema.define(:version => 20120601033236) do
 
   create_table "comments", :force => true do |t|
     t.string   "comment"
@@ -23,21 +23,21 @@ ActiveRecord::Schema.define(:version => 20120530212104) do
   end
 
   create_table "follows", :force => true do |t|
-    t.integer  "follwer_id"
     t.integer  "followed_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "follower_id"
   end
 
   create_table "projects", :force => true do |t|
     t.string   "title"
     t.integer  "creator_id"
-    t.integer  "BPM"
     t.integer  "versions"
     t.integer  "followers"
     t.string   "tags"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "bpm"
   end
 
   create_table "tag_relations", :force => true do |t|
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20120530212104) do
     t.integer  "forked_from"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.integer  "VSTs"
+    t.string   "vsts"
   end
 
   create_table "users", :force => true do |t|
@@ -71,13 +71,6 @@ ActiveRecord::Schema.define(:version => 20120530212104) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "email"
-  end
-
-  create_table "vs_ts", :force => true do |t|
-    t.string   "name"
-    t.string   "sources"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "vsts", :force => true do |t|

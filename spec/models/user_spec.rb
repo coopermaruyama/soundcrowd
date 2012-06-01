@@ -1,14 +1,8 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+require 'spec_helper'
 
-one:
-  username: MyString
-  password: MyString
-  program: 
-
-two:
-  username: MyString
-  password: MyString
-  program: 
+describe User do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
 # == Schema Information
 #
 # Table name: users

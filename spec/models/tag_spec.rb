@@ -1,12 +1,14 @@
-class Vst < ActiveRecord::Base
+require 'spec_helper'
+
+describe Tag do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
 # == Schema Information
 #
-# Table name: vsts
+# Table name: tags
 #
 #  id         :integer         not null, primary key
-#  name       :string(255)
-#  source     :string(255)
+#  title      :string(255)
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
 #

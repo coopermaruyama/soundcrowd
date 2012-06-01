@@ -1,20 +1,8 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+require 'spec_helper'
 
-one:
-  title: MyString
-  creator_id: 1
-  BPM: 1
-  versions: 1
-  followers: 1
-  tags: MyString
-
-two:
-  title: MyString
-  creator_id: 1
-  BPM: 1
-  versions: 1
-  followers: 1
-  tags: MyString
+describe Project do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
 # == Schema Information
 #
 # Table name: projects

@@ -1,20 +1,7 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  title: MyString
-  creator_id: 1
-  BPM: 1
-  versions: 1
-  followers: 1
-  tags: MyString
-
-two:
-  title: MyString
-  creator_id: 1
-  BPM: 1
-  versions: 1
-  followers: 1
-  tags: MyString
+class Project < ActiveRecord::Base
+attr_accessor :title, :creator_id, :versions, :followers, :tags, :bpm
+attr_accessible :title, :bpm
+end
 # == Schema Information
 #
 # Table name: projects

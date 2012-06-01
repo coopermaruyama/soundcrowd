@@ -1,12 +1,8 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+require 'spec_helper'
 
-one:
-  tag_id: 1
-  tagged_track: 1
-
-two:
-  tag_id: 1
-  tagged_track: 1
+describe TagRelation do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
 # == Schema Information
 #
 # Table name: tag_relations
