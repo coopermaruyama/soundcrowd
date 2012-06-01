@@ -1,16 +1,15 @@
 Soundcrowd::Application.routes.draw do
-  get "projects/index"
 
   match "projects/", :to =>'projects#index'
   
-  get "projects/new"
 
-  get "projects/edit"
 
-  get "projects/view"
+  match "projects/view", :to => 'projects#index'
 
   get "home/index"
   root :to => "home#index"
+  
+  resources :projects
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

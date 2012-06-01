@@ -11,5 +11,11 @@ class ProjectsController < ApplicationController
   end
 
   def view
+    @project = Project.find(params[:id])
+  end
+  
+  def show
+    @project = Project.find(params[:id])
+    render 'view'
   end
 end

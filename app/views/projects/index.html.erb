@@ -1,2 +1,8 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<h1>All Projects</h1>
+<ul>
+	<% @projects.each do |project| %>
+		<li>
+			id:<%= project.id %> - <%= link_to project.title, project  %>, <%= project.bpm %>, <%= project.tags %>
+		</li>
+	<% end %>
+</ul>

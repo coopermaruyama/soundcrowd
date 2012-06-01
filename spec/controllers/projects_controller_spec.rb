@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ProjectsController do
   
   before(:each) do
-    @project = create(:project)
+    project = create(:project)
   end
   
   describe "GET 'index'" do
@@ -17,7 +17,7 @@ describe ProjectsController do
   
   describe "Show Projects" do
     it "should be successful" do
-      get :view, :id => @project.id
+      get :view, :id => @project
       response.should be_success
     end
   end

@@ -1,7 +1,12 @@
 require 'spec_helper'
 
 describe Project do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+    @project = create(:project)
+  end
+  it "should be able to add a project given valid attribute" do
+    Project.create!(@project)
+  end
 end
 # == Schema Information
 #
