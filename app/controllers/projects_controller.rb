@@ -16,6 +16,7 @@ class ProjectsController < ApplicationController
   
   def show
     @project = Project.find(params[:id])
+    @project_creator = User.find(@project.creator_id)
     render 'view'
   end
 end

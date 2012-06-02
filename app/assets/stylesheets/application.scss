@@ -1,8 +1,24 @@
 @import 'all.css.scss';
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('bebasneue.eot');
+    src: url('bebasneue.eot?#iefix') format('embedded-opentype'),
+         url('bebasneue.woff') format('woff'),
+         url('bebasneue.ttf') format('truetype'),
+         url('bebasneue.svg#bebasneue') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 @mixin arial15 {
 	font-family: Arial, sans-serif;
 	font-size: 15px;
-	letter-spacing: -1px;
+}
+@mixin bebas {
+	font-family: 'BebasNeue';
+	letter-spacing: 0px;
+	font-weight: 100;
 }
 html,body {
 	margin:0;
@@ -10,6 +26,8 @@ html,body {
 	height: 100%;
 	width: 100%;
 	@include linear-gradient(#efeae1, #ebd6b1);
+	@include arial15;
+	position:relative;
 }
 
 header {
@@ -25,6 +43,19 @@ header {
 }
 
 .main {
-	margin: 10px;
-	@include arial15;
+	position: absolute;
+	top: 60px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
 }
+
+h1 {
+	@include bebas;
+	
+	font-size: 50px;
+	margin: 0 auto;
+}
+
+.clr {clear: both;}
+

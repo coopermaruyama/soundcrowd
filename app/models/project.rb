@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-attr_accessible :title, :bpm, :tags
+attr_accessible :title, :bpm, :tags, :creator_id, :versions, :followers
 
 end
 # == Schema Information

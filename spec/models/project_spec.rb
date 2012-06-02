@@ -5,7 +5,7 @@ describe Project do
     @project = create(:project)
   end
   it "should be able to add a project given valid attribute" do
-    Project.create!(@project)
+    Project.create!(attributes_for(:project))
   end
 end
 # == Schema Information

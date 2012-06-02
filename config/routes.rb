@@ -1,5 +1,7 @@
 Soundcrowd::Application.routes.draw do
 
+
+
   match "projects/", :to =>'projects#index'
   
 
@@ -10,6 +12,7 @@ Soundcrowd::Application.routes.draw do
   root :to => "home#index"
   
   resources :projects
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
