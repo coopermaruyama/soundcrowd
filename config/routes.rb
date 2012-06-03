@@ -2,7 +2,7 @@ Soundcrowd::Application.routes.draw do
 
 
 
-  match "projects/", :to =>'projects#index'
+  
   
 
 

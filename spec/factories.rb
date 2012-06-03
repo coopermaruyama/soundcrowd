@@ -52,4 +52,9 @@ FactoryGirl.define do
     name    "Massive"
     source  "http://google.com/"
   end
+  
+  factory :program do
+    id  1
+    name "Ableton Live"
+  end
 end

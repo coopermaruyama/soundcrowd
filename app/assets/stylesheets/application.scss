@@ -59,3 +59,17 @@ h1 {
 
 .clr {clear: both;}
 
+a.back {
+	$color: #9a907f;
+	font-size: 12px;
+	text-decoration: none;
+	color: $color;
+	
+	&:hover {
+		color:
+			lighten($color, 20%);
+	}
+	&:visited {
+		color: $color;
+	}
+}
