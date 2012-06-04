@@ -1,5 +1,8 @@
 require 'spec_helper'
 
-describe "users/new.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "signup" do
+  
+  it "should have a signup form" do
+    
+  end
 end

@@ -1,0 +1,29 @@
+.project-head
+	= avatar
+	.project-title
+		%h1.title= @project.title
+		.clr
+		%span.creator-info
+			= "By:" 
+			= link_to @project_creator.username, @project_creator
+
+.clr
+
+#main
+	.project-left
+		.label-left
+			%h2= @project.bpm
+			%h2= @project.versions
+			%h2= @project.followers
+		.label-right
+			%h2
+				%span.label
+					BPM
+			%h2
+				%span.label
+					versions
+			%h2
+				%span.label
+					followers
+	.project-main
+.clr

@@ -1,16 +1,11 @@
 Soundcrowd::Application.routes.draw do
 
-
-
-  
-  
-
-
   match "projects/view", :to => 'projects#index'
-
+  match '/signup', :to => 'users#new'
   get "home/index"
   root :to => "home#index"
   
+  resources :sessions
   resources :projects
   resources :users
 

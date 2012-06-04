@@ -1,0 +1,25 @@
+%h1
+	Sign Up
+%fieldset
+	%legend
+		Fill out the form below
+	%form{:action => "#"}
+		%br
+		%label{:for => "username"} Username
+		%input{:type => "text", :name => "username"}
+		.clr
+		%br
+		%label{:for => "email"} Email
+		%input{:type => "text", :name => "email"}
+		.clr
+		%br
+		%label{:for => "program"} What program do you use?
+		%select{:type => "list", :name => "program"}
+			%option{:value => 5} I don't have one
+			%option{:value => 1} Ableton Live
+			%option{:value => 2} Logic
+			%option{:value => 3} Cubase
+			%option{:value => 4} Pro Tools
+		.clr
+		%br
+		%button.submit{:type=> "submit"} Submit

@@ -35,6 +35,10 @@ describe ProjectsController do
     it "should display the creator's name" do
       response.body.should have_selector("span", :class => "creator-info", :content => "deadmau5")
     end
+    
+    it "should link to the creator's profile" do
+      response.body.should have_selector("a", :content => 'deadmau5', :href => '/users/1')
+    end
   end
   
 end
