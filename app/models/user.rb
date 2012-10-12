@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  	has_and_belongs_to_many :productions
+  	has_many :user_productions
+	has_many :productions, :through => :user_productions
 	has_many :versions, :through => :productions
-
 end
 # == Schema Information
 #

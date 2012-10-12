@@ -1,20 +1,6 @@
 class Version < ActiveRecord::Base
-	belongs_to :production
-	attr_accessible :user_id, :production_id
+	belongs_to :user_production
 
-	after_create :associate_user
-
-	def associate_user
-		@users = User.all(:include => :productions, :conditions => {"productions_users.production_id" => self.production_id})
-		@users.each do |user|
-			user.productions.each do |production|
-				if production.versions.exists?(self)
-					@version_user = user
-				end
-			end
-		end
-		self.user_id = @version_user.id
-	end
 
 
 end

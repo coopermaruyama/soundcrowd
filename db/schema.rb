@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121012193730) do
+ActiveRecord::Schema.define(:version => 20121012211409) do
 
   create_table "productions", :force => true do |t|
     t.string   "title"
@@ -19,12 +19,14 @@ ActiveRecord::Schema.define(:version => 20121012193730) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "productions_users", :id => false, :force => true do |t|
-    t.integer "production_id", :null => false
-    t.integer "user_id",       :null => false
+  create_table "user_productions", :id => false, :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "production_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
-  add_index "productions_users", ["production_id", "user_id"], :name => "index_productions_users_on_production_id_and_user_id", :unique => true
+  add_index "user_productions", ["user_id", "production_id"], :name => "index_user_productions_on_user_id_and_production_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "username"
