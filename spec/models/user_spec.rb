@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe User do
-  it "should have many tracks" do
+  it "should have many productions" do
   	@user = FactoryGirl.create(:user)
-  	@user.tracks.build.should be_valid
+  	@user.productions.build.should be_valid
   end
 end
 # == Schema Information

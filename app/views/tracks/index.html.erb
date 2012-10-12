@@ -1,8 +1,8 @@
-<h1>All Tracks</h1>
+<h1>All Productions</h1>
 <ul>
-	<% @tracks.each do |track| %>
+	<% @productions.each do |production| %>
 		<li>
-			id:<%= track.id %> - <%= link_to track.title, track  %>, <%= track.bpm %>, <%= track.tags %>
+			id:<%= production.id %> - <%= link_to production.title, production  %>, <%= production.bpm %>, <%= production.tags %>
 		</li>
 	<% end %>
 </ul>

@@ -4,7 +4,7 @@ window.Soundcrowd =
   Views: {}
   Routers: {}
   init: ->
-  	new Soundcrowd.Routers.Tracks
+  	new Soundcrowd.Routers.Productions
   	Backbone.history.start(pushState: true)
 
 $(document).ready ->

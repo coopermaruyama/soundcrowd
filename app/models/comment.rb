@@ -8,7 +8,7 @@ end
 #  comment         :string(255)
 #  timestamp       :datetime
 #  reply_of        :integer
-#  track_timestamp :integer
+#  production_timestamp :integer
 #  created_at      :datetime        not null
 #  updated_at      :datetime        not null
 #

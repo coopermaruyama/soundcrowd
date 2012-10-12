@@ -1,2 +1,2 @@
-class TrackUser < ActiveRecord::Base
+class ProductionUser < ActiveRecord::Base
 end

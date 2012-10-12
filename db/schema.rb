@@ -11,24 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121012103406) do
+ActiveRecord::Schema.define(:version => 20121012193730) do
 
-  create_table "track_users", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "track_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "track_users", ["track_id", "user_id"], :name => "index_track_users_on_track_id_and_user_id", :unique => true
-  add_index "track_users", ["track_id"], :name => "index_track_users_on_track_id"
-  add_index "track_users", ["user_id"], :name => "index_track_users_on_user_id"
-
-  create_table "tracks", :force => true do |t|
+  create_table "productions", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "productions_users", :id => false, :force => true do |t|
+    t.integer "production_id", :null => false
+    t.integer "user_id",       :null => false
+  end
+
+  add_index "productions_users", ["production_id", "user_id"], :name => "index_productions_users_on_production_id_and_user_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "username"
@@ -51,15 +47,15 @@ ActiveRecord::Schema.define(:version => 20121012103406) do
     t.integer  "forked_from"
     t.string   "source_file"
     t.string   "audio_file"
-    t.integer  "track_id"
+    t.integer  "production_id"
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "versions", ["forked_from"], :name => "index_versions_on_forked_from"
-  add_index "versions", ["track_id"], :name => "index_versions_on_track_id"
-  add_index "versions", ["user_id", "track_id"], :name => "index_versions_on_user_id_and_track_id"
+  add_index "versions", ["production_id"], :name => "index_versions_on_production_id"
+  add_index "versions", ["user_id", "production_id"], :name => "index_versions_on_user_id_and_production_id"
   add_index "versions", ["user_id"], :name => "index_versions_on_user_id"
 
 end

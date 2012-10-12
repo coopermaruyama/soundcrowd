@@ -1,9 +1,9 @@
 require 'spec_helper'
-describe TracksController do
+describe ProductionsController do
 
 before(:each) do
-      @track = Track.create!(:title => "test")
-      get :show, :id => @track.id
+      @production = Production.create!(:title => "test")
+      get :show, :id => @production.id
     end
   
   describe "GET 'index'" do
@@ -13,7 +13,7 @@ before(:each) do
     end
   end
   
-  describe "Show Tracks" do
+  describe "Show Productions" do
     render_views
     
     
@@ -25,7 +25,7 @@ before(:each) do
       response.body.should have_selector("img", :class => "avatar")
     end
     
-    it "should display proper track title" do
+    it "should display proper production title" do
       response.body.should have_selector("h1", :class => "title", :content => "A City in Florida")
     end
     

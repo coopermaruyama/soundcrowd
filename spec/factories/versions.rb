@@ -5,6 +5,6 @@ FactoryGirl.define do
     forked_from 1
     source_file "MyString"
     audio_file "MyString"
-    track_id 1
+    production_id 1
   end
 end

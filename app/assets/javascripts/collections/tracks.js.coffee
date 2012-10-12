@@ -1,3 +1,3 @@
-class Soundcrowd.Collections.Tracks extends Backbone.Collection
+class Soundcrowd.Collections.Productions extends Backbone.Collection
 
-  model: Soundcrowd.Models.Track
+  model: Soundcrowd.Models.Production

@@ -1,6 +1,6 @@
-class Soundcrowd.Routers.Tracks extends Backbone.Router
+class Soundcrowd.Routers.Productions extends Backbone.Router
 	routes:
-		'tracks/:id': 'show'
+		'productions/:id': 'show'
 
 	show: (id) ->
 		

@@ -1,20 +1,20 @@
 .project-head
 	= avatar
 	.project-title
-		%h1.title= @track.title
+		%h1.title= @production.title
 		.clr
 		%span.creator-info
 			= "By:" 
-			= link_to @track.user.username, @track.user
+			= link_to @production.user.username, @production.user
 
 .clr
 
 #main
 	.project-left
 		.label-left
-			%h2= @track.bpm
-			%h2= @track.versions
-			%h2= @track.followers
+			%h2= @production.bpm
+			%h2= @production.versions
+			%h2= @production.followers
 		.label-right
 			%h2
 				%span.label

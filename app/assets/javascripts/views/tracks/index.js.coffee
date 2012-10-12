@@ -1,3 +1,3 @@
-class Soundcrowd.Views.TracksIndex extends Backbone.View
+class Soundcrowd.Views.ProductionsIndex extends Backbone.View
 
-  template: JST['tracks/index']
+  template: JST['productions/index']
