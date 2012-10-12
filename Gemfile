@@ -14,6 +14,8 @@ gem "devise"
 gem "waveform" #for creating waveform images
 gem "oily_png" #png manipulation for waveform
 
+gem "carrierwave"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

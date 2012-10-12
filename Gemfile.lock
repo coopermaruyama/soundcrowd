@@ -45,6 +45,9 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
+    carrierwave (0.6.2)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     childprocess (0.3.2)
       ffi (~> 1.0.6)
     chunky_png (1.2.6)
@@ -198,6 +201,7 @@ DEPENDENCIES
   annotate (~> 2.4.1.beta)
   backbone-on-rails
   capybara
+  carrierwave
   coffee-rails (~> 3.2.1)
   cucumber-rails (>= 1.2.1)
   database_cleaner

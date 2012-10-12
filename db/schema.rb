@@ -11,59 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121011181047) do
+ActiveRecord::Schema.define(:version => 20121012103406) do
 
-  create_table "comments", :force => true do |t|
-    t.string   "comment"
-    t.datetime "timestamp"
-    t.integer  "reply_of"
-    t.integer  "track_timestamp"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  create_table "follows", :force => true do |t|
-    t.integer  "followed_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "follower_id"
-  end
-
-  create_table "programs", :force => true do |t|
-    t.string   "name"
+  create_table "track_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "track_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "tag_relations", :force => true do |t|
-    t.integer  "tag_id"
-    t.integer  "tagged_track"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  create_table "tags", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+  add_index "track_users", ["track_id", "user_id"], :name => "index_track_users_on_track_id_and_user_id", :unique => true
+  add_index "track_users", ["track_id"], :name => "index_track_users_on_track_id"
+  add_index "track_users", ["user_id"], :name => "index_track_users_on_user_id"
 
   create_table "tracks", :force => true do |t|
     t.string   "title"
-    t.integer  "versions"
-    t.integer  "followers"
-    t.string   "tags"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "bpm"
-    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.integer  "program_id"
-    t.string   "username",               :default => "", :null => false
+    t.string   "username"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
@@ -80,22 +48,18 @@ ActiveRecord::Schema.define(:version => 20121011181047) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "versions", :force => true do |t|
-    t.integer  "votes"
-    t.integer  "forks"
-    t.boolean  "original"
     t.integer  "forked_from"
+    t.string   "source_file"
+    t.string   "audio_file"
+    t.integer  "track_id"
+    t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.string   "vsts"
-    t.integer  "user_id"
-    t.integer  "track_id"
   end
 
-  create_table "vsts", :force => true do |t|
-    t.string   "name"
-    t.string   "source"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+  add_index "versions", ["forked_from"], :name => "index_versions_on_forked_from"
+  add_index "versions", ["track_id"], :name => "index_versions_on_track_id"
+  add_index "versions", ["user_id", "track_id"], :name => "index_versions_on_user_id_and_track_id"
+  add_index "versions", ["user_id"], :name => "index_versions_on_user_id"
 
 end
