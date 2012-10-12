@@ -1,20 +1,25 @@
 require 'spec_helper'
 
 describe Track do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+    @track = FactoryGirl.create(:track)
+  end
+  it "should be able to add a track given valid attribute" do
+    @track.bpm.should eq(120)
+  end
 end
 # == Schema Information
 #
 # Table name: tracks
 #
-#  id          :integer         not null, primary key
-#  creator     :integer
-#  votes       :integer
-#  forks       :integer
-#  original    :boolean
-#  forked_from :integer
-#  created_at  :datetime        not null
-#  updated_at  :datetime        not null
-#  vsts        :string(255)
+#  id         :integer         not null, primary key
+#  title      :string(255)
+#  versions   :integer
+#  followers  :integer
+#  tags       :string(255)
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#  bpm        :integer
+#  user_id    :integer
 #
 

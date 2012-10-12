@@ -1,0 +1,8 @@
+<h1>All Tracks</h1>
+<ul>
+	<% @tracks.each do |track| %>
+		<li>
+			id:<%= track.id %> - <%= link_to track.title, track  %>, <%= track.bpm %>, <%= track.tags %>
+		</li>
+	<% end %>
+</ul>

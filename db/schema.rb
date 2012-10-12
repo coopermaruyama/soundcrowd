@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120602064328) do
+ActiveRecord::Schema.define(:version => 20121011181047) do
 
   create_table "comments", :force => true do |t|
     t.string   "comment"
@@ -35,17 +35,6 @@ ActiveRecord::Schema.define(:version => 20120602064328) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "projects", :force => true do |t|
-    t.string   "title"
-    t.integer  "creator_id"
-    t.integer  "versions"
-    t.integer  "followers"
-    t.string   "tags"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "bpm"
-  end
-
   create_table "tag_relations", :force => true do |t|
     t.integer  "tag_id"
     t.integer  "tagged_track"
@@ -60,7 +49,37 @@ ActiveRecord::Schema.define(:version => 20120602064328) do
   end
 
   create_table "tracks", :force => true do |t|
-    t.integer  "creator"
+    t.string   "title"
+    t.integer  "versions"
+    t.integer  "followers"
+    t.string   "tags"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "bpm"
+    t.integer  "user_id"
+  end
+
+  create_table "users", :force => true do |t|
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.integer  "program_id"
+    t.string   "username",               :default => "", :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "versions", :force => true do |t|
     t.integer  "votes"
     t.integer  "forks"
     t.boolean  "original"
@@ -68,15 +87,8 @@ ActiveRecord::Schema.define(:version => 20120602064328) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "vsts"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "password"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "email"
-    t.integer  "program_id"
+    t.integer  "user_id"
+    t.integer  "track_id"
   end
 
   create_table "vsts", :force => true do |t|

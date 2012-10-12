@@ -1,14 +1,15 @@
 Soundcrowd::Application.routes.draw do
 
-  match "projects/view", :to => 'projects#index'
+  devise_for :users
+  match 'users' => 'users#index', :as => 'users'
+  match 'users/:id' => 'users#show', :as => 'user'
+
   match '/signup', :to => 'users#new'
   get "home/index"
   root :to => "home#index"
   
-  resources :sessions
-  resources :projects
-  resources :users
-
+  resources :tracks
+  match '*path', to: 'main#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

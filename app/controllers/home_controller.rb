@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @projects = Project.all
+    @tracks = Track.all
     @users = User.all
   end
 end

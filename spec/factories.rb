@@ -1,20 +1,19 @@
 FactoryGirl.define do 
-  
-  factory :project do
-    id          1
+
+  factory :track do
+    versions
     title       "A City in Florida"
     tags        "house, dubstep, progressive"
     bpm         120
-    creator_id  1
     versions    43
     followers   197
   end
   
   factory :user do
-    id          1
+    track
     username   "deadmau5"
     program_id    1
-    email     "deadmau5@gmail.com"
+    sequence(:email) {|n| "deadmau#{n}@email.com" }
     password  "dm54life"
   end
   
@@ -39,8 +38,7 @@ FactoryGirl.define do
     title "House"
   end
   
-  factory :track do
-    creator       2
+  factory :versions do
     votes         27
     forks         2
     original      true
@@ -54,7 +52,7 @@ FactoryGirl.define do
   end
   
   factory :program do
-    id  1
     name "Ableton Live"
   end
 end
+

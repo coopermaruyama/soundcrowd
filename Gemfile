@@ -7,8 +7,13 @@ gem 'rails', '3.2.1'
 
 gem 'sqlite3-ruby'
 gem 'sass'
-gem "rails-backbone"
+gem "backbone-on-rails"
 gem 'haml'
+gem "devise"
+
+gem "waveform" #for creating waveform images
+gem "oily_png" #png manipulation for waveform
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

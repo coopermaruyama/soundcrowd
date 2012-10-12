@@ -12,6 +12,8 @@
 				%a.signup= link_to "Sign Up", signup_path 
 		.clr
 		.main
+			%p.notice= notice
+			%p.alert= alert
 			= yield
 			.clr
 			%br
