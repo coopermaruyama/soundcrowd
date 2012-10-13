@@ -5,7 +5,7 @@ class CreateVersions < ActiveRecord::Migration
       t.string :source_file
       t.string :audio_file
       t.integer :production_id
-      t.integer :user_id
+      t.integer :user_id, :null => false
 
       t.timestamps
     end

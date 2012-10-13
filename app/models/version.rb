@@ -2,7 +2,12 @@ class Version < ActiveRecord::Base
 	belongs_to :user_production
 
 
+	validates :user_id, :presence => true
 
+	attr_accessible :user_id, :forked_from, :audio_file, :source_file
+	def user
+		User.find(self.user_id)
+	end
 end
 # == Schema Information
 #

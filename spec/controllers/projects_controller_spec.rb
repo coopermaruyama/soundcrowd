@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ProjectsController do
+describe ProductionsController do
   
   before(:each) do
     @project = create(:project)

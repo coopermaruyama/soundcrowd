@@ -12,7 +12,10 @@ class Production < ActiveRecord::Base
 	end
 
 	def set_creator
-		self.creator_id = self.users.first.id
+		if self.creator_id == nil
+			self.creator_id = self.users.first.id
+			self.save
+		end
 	end
 end
 # == Schema Information
