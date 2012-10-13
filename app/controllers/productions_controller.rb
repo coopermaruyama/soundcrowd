@@ -4,17 +4,21 @@ class ProductionsController < ApplicationController
   end
 
   def new
-    @production = Production.new
+    if user_signed_in?
+      @production = current_user.productions.build
+      @version = @production.versions.build(:user_id => current_user.id)
+    else
+      redirect_to new_user_session_path, :notice => "You must sign in before creating a production"
+    end
+
   end
 
   def create
-    @production = Production.new(params[:production])
-    if @production.save
-      format.html { redirect_to(@production, :notice => "Production successfully created!") }
-      format.xml  { render :xml => @production, :status => :created, :location => @production }
+    @production = current_user.productions.create!(params[:production].merge(:creator_id => current_user.id))
+    if @production.save!
+      redirect_to(production_path(@production), :notice => "Production successfully created!") 
     else
-      format.html { redirect_to new_production_path(:current) }
-      format.xml  { render :xml => @production.errors, :status => :unprocessable_entity }
+      format.html { render action: "new" }
     end
   end  
 

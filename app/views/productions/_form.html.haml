@@ -2,6 +2,7 @@
 	= f.label :title
 	= f.text_field :title
 	= f.fields_for :versions do |version|
-		= version.label :audio
-		= version.file_field :audio
+		= version.label :audio_file
+		= version.file_field :audio_file
+		= version.hidden_field :user_id
 	= f.submit

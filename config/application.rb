@@ -56,5 +56,8 @@ module Soundcrowd
     config.assets.initialize_on_precompile = false
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    ENV["AWS_ACCESS_KEY_ID"] = "AKIAI2BC4B276WJHMJLQ"
+    ENV["AWS_SECRET_ACCESS_KEY"] = "RZmXoPtzaIqYNAjjOx06BebWEQJZSlrXFkXBjklJ"
+    ENV["AWS_S3_BUCKET"] = "soundcrowd"
   end
 end

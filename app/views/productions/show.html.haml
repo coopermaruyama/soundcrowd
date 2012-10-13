@@ -23,4 +23,6 @@
 				%span.label
 					followers
 	.project-main
+		%audio{:controls => "controls"}
+			%source{:src => @production.versions.first.audio_file, :type=>"audio/mpeg"}
 .clr

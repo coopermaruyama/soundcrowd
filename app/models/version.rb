@@ -1,7 +1,7 @@
 class Version < ActiveRecord::Base
 	belongs_to :user_production
 
-
+	mount_uploader :audio_file, AudioUploader
 	validates :user_id, :presence => true
 
 	attr_accessible :user_id, :forked_from, :audio_file, :source_file
