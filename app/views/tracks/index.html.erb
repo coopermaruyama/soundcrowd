@@ -1,8 +1,0 @@
-<h1>All Productions</h1>
-<ul>
-	<% @productions.each do |production| %>
-		<li>
-			id:<%= production.id %> - <%= link_to production.title, production  %>, <%= production.bpm %>, <%= production.tags %>
-		</li>
-	<% end %>
-</ul>
