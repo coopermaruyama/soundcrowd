@@ -13,12 +13,12 @@ gem "waveform" #for creating waveform images
 gem "oily_png" #png manipulation for waveform
 
 gem "carrierwave"
-
+gem "carrierwave_direct"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem "jquery-fileupload-rails"
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 

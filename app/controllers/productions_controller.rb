@@ -15,11 +15,6 @@ class ProductionsController < ApplicationController
 
   def create
     @production = current_user.productions.create!(params[:production].merge(:creator_id => current_user.id))
-    if @production.save!
-      redirect_to(production_path(@production), :notice => "Production successfully created!") 
-    else
-      format.html { render action: "new" }
-    end
   end  
 
 

@@ -31,7 +31,41 @@ $useIEFilters: 0;
 // might be 0 or 1. disabled by default.
 // ---- /LEGACY IE SUPPORT USING FILTERS ----
 
+// GLOBAL CSS VARIABLES
+$orange: #e8b772;
+$bglight: #efeae1;
+$bgdark:#ebd6b1;
+//
+//
+//GLOBAL PLUGINS
+@import "progress-bar";
+//
+//
+//GLOBAL MIXINS
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('bebasneue.eot');
+    src: url('bebasneue.eot?#iefix') format('embedded-opentype'),
+         url('bebasneue.woff') format('woff'),
+         url('bebasneue.ttf') format('truetype'),
+         url('bebasneue.svg#bebasneue') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
+
+@mixin arial15 {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+}
+@mixin bebas {
+  font-family: 'BebasNeue';
+  letter-spacing: 0px;
+  font-weight: 100;
+}
+//
+//
+//
 @mixin background-size ($value) {
   -webkit-background-size: $value;
           background-size: $value;

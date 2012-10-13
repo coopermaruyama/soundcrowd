@@ -1,0 +1,3 @@
+- @production.versions.each do |version|
+	%audio{:controls => "controls"}
+		%source{:src => version.audio_file, :type=>"audio/mpeg"}

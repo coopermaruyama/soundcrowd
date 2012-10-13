@@ -5,7 +5,7 @@
 		.clr
 		%span.creator-info
 			= "By:" 
-			= link_to @production.creator , @production.creator
+			= link_to @production.creator.username , @production.creator
 
 .clr
 
@@ -23,6 +23,5 @@
 				%span.label
 					followers
 	.project-main
-		%audio{:controls => "controls"}
-			%source{:src => @production.versions.first.audio_file, :type=>"audio/mpeg"}
+		= render :partial => "production" 
 .clr
