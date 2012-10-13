@@ -3,10 +3,17 @@ class Production < ActiveRecord::Base
 	has_many :user_productions
 	has_many :users, :through => :user_productions
 
-	validates :user_id, :presence => true
+	after_commit :set_creator
 
+	attr_accessible :creator_id, :title
 	# Dont forget to use this model by doing create(:user_id => user.id)!
+	def creator
+		User.find(self.creator_id)
+	end
 
+	def set_creator
+		self.creator_id = self.users.first.id
+	end
 end
 # == Schema Information
 #
