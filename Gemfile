@@ -9,11 +9,15 @@ gem "backbone-on-rails"
 gem 'haml'
 gem "devise"
 
+gem "ancestry"
+
 gem "waveform" #for creating waveform images
 gem "oily_png" #png manipulation for waveform
 
-gem "carrierwave"
+gem "carrierwave"       #handle uploads
 gem "carrierwave_direct"
+
+gem "randexp"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

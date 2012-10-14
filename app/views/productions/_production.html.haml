@@ -1,3 +1,10 @@
 - @production.versions.each do |version|
-	%audio{:controls => "controls"}
-		%source{:src => version.audio_file, :type=>"audio/mpeg"}
+	.version
+		= avatar(version.user)
+		.version-info
+			%h3.version-title= version.title
+			%span.version-user
+				By: 
+				= link_to version.user.username, version.user
+		.clr
+		= render :partial => "player", :locals => { :version => version }

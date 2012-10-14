@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
+//= require jquery.jplayer.min
 //= require underscore
 //= require backbone
 //= require .//soundcrowd

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013022734) do
+ActiveRecord::Schema.define(:version => 20121014045720) do
 
   create_table "productions", :force => true do |t|
     t.string   "title"
@@ -47,16 +47,16 @@ ActiveRecord::Schema.define(:version => 20121013022734) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "versions", :force => true do |t|
-    t.integer  "forked_from"
     t.string   "source_file"
     t.string   "audio_file"
     t.integer  "production_id"
     t.integer  "user_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "original_id"
+    t.string   "title"
   end
 
-  add_index "versions", ["forked_from"], :name => "index_versions_on_forked_from"
   add_index "versions", ["production_id"], :name => "index_versions_on_production_id"
   add_index "versions", ["user_id", "production_id"], :name => "index_versions_on_user_id_and_production_id"
   add_index "versions", ["user_id"], :name => "index_versions_on_user_id"
