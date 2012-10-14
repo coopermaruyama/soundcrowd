@@ -1,0 +1,11 @@
+= form_for @version, :html => {:multipart => true, :id => "new_version"} do |f|
+	= f.file_field :audio_file, multiple: true, name: "version[audio_file]"
+	= f.hidden_field :user_id
+	= f.hidden_field :production_id
+	= f.hidden_field :parent_id
+	= f.submit
+%script#template-upload{:type => "text/x-tmpl"}
+	.upload.ui-progress-bar
+		.bar.ui-progress{:style => "width: 0%"}
+			%span
+				{%=o.name%}

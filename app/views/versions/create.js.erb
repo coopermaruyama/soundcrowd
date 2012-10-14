@@ -1,0 +1,6 @@
+<% if @version.new_record? %>
+  alert("Failed to upload version: <%= j @version.errors.full_messages.join(', ').html_safe %>");
+<% else %>
+	$('#create-status').append('Success').fadeIn(500);
+	$("#preview").append("<%= j render(@version) %>").fadeIn(700);
+<% end %>

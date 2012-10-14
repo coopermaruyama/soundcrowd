@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014045720) do
+ActiveRecord::Schema.define(:version => 20121014053748) do
 
   create_table "productions", :force => true do |t|
     t.string   "title"
@@ -55,8 +55,10 @@ ActiveRecord::Schema.define(:version => 20121014045720) do
     t.datetime "updated_at",    :null => false
     t.integer  "original_id"
     t.string   "title"
+    t.string   "ancestry"
   end
 
+  add_index "versions", ["ancestry"], :name => "index_versions_on_ancestry"
   add_index "versions", ["production_id"], :name => "index_versions_on_production_id"
   add_index "versions", ["user_id", "production_id"], :name => "index_versions_on_user_id_and_production_id"
   add_index "versions", ["user_id"], :name => "index_versions_on_user_id"

@@ -1,4 +1,5 @@
 class Version < ActiveRecord::Base
+	has_ancestry
 	belongs_to :user_production
 	has_many :versions, :class_name => "Version", :foreign_key => "original_id"
 	belongs_to :original, :class_name => "Version"
@@ -6,7 +7,9 @@ class Version < ActiveRecord::Base
 	mount_uploader :audio_file, AudioUploader #for uploading audio files
 
 	validates :user_id, :presence => true 
-	attr_accessible :user_id, :forked_from, :audio_file, :source_file
+	validates :production_id, :presence => true
+	
+	attr_accessible :user_id, :forked_from, :audio_file, :source_file, :production_id, :parent_id
 
 	before_create :generate_title
 

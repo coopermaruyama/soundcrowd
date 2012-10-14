@@ -1,5 +1,6 @@
 Soundcrowd::Application.routes.draw do
 
+
   devise_for :users
   match 'users' => 'users#index', :as => 'users'
   match 'users/:id' => 'users#show', :as => 'user'
@@ -8,7 +9,11 @@ Soundcrowd::Application.routes.draw do
   get "home/index"
   root :to => "home#index"
   
-  resources :productions
+  match "/productions/:production_id/:controller/:id/:action" #productions/30/versions/30/new
+  resources :productions do
+    resources :versions
+  end
+  resources :versions
   match '*path', to: 'main#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -156,3 +156,21 @@ THE SOFTWARE.
 .ui-progress-bar .ui-progress span.ui-label b {
   font-weight: bold;
 }
+
+#create-status, #preview {
+  display:none;
+}
+
+.ui-progress-bar {
+  width: 500px;
+  margin: 10px auto;
+  span {
+    position: absolute;
+    z-index: 2;
+    text-shadow: 0px 1px white;
+    padding: 3px 10px;
+  }
+  .ui-progress {
+    padding: 0px;
+  }
+}
