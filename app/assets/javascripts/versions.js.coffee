@@ -5,7 +5,7 @@ $ ->
 	$('#new_version').fileupload
 		dataType: "script"
 		add: (e, data) ->
-			types = /(\.|\/)(mp3|wav|aiff)$/i
+			types = /(\.|\/)(mp3|wav|aiff|m4a)$/i
 			file = data.files[0]
 			if types.test(file.type) || types.test(file.name)
 				data.context = $(tmpl("template-upload", file))
@@ -21,7 +21,7 @@ $ ->
 	$('.jp-jplayer').jPlayer
 		ready: ->
 			$(this).jPlayer "setMedia"
-				mp3: $(this).attr('title')
+				m4a: $(this).attr('title')
 				oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
 		swfPath: "/assets"
-		supplied: "mp3, oga"
+		supplied: "m4a, oga"

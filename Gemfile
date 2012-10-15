@@ -8,7 +8,7 @@ gem 'sass'
 gem "backbone-on-rails"
 gem 'haml'
 gem "devise"
-
+gem "resque"
 gem "ancestry"
 
 gem "waveform" #for creating waveform images
