@@ -7,7 +7,7 @@ class Version < ActiveRecord::Base
 	validates :user_id, :presence => true 
 	validates :production_id, :presence => true
 	
-	attr_accessible :user_id, :forked_from, :audio_file, :source_file, :production_id, :parent_id
+	attr_accessible :user_id, :forked_from, :audio_file, :source_file, :production_id, :parent_id, :remote_audio_file_url
 
 	before_create :generate_title
 
