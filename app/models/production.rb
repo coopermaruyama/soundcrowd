@@ -11,7 +11,7 @@ class Production < ActiveRecord::Base
 	def creator
 		User.find(self.creator_id)
 	end
-
+	#fallback if no creator is passed
 	def set_creator
 		if self.creator_id == nil
 			self.creator_id = self.users.first.id

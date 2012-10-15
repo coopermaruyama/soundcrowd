@@ -1,6 +1,5 @@
 class VersionsController < ApplicationController
-
-
+	before_filter :authenticate_user!, :except => [:show, :index] 
 	def index
 		@production = Production.find(params[:production_id])
 		redirect_to(@production)
@@ -9,7 +8,7 @@ class VersionsController < ApplicationController
 	def new
 		@production = Production.find(params[:production_id])
 		@parent = Version.find(params[:id])
-		@version = Version.new(:parent_id => @parent.id, :user_id => current_user.id, :production_id => params[:production_id])
+		@version = @parent.children.build(:user_id => current_user.id, :production_id => params[:production_id])
 	end
 	
 	def create
@@ -22,21 +21,4 @@ class VersionsController < ApplicationController
 	def destroy
 	end
 
-	# def create_child
-	# 	@parent_version = Version.find(params[:id])
-	# 	@version = @parent_version.versions.build(
-	# 		:user_id => current_user.id,
-	# 		:production_id => @parent_version.production_id,
-	# 		:parent => @parent_version
-	# 		)
-	# end
-
-	# def new_child
-	# 	@parent_version = Version.find(params[:id])
-	# 	@version = @parent_version.versions.build(
-	# 		:user_id => current_user.id,
-	# 		:production_id => @parent_version.production_id,
-	# 		:parent => @parent_version
-	# 		)
-	# end
 end

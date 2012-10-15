@@ -48,3 +48,6 @@ group :test do
   gem 'growl'
 end
 
+group :test, :development do
+  gem "faker"
+end
