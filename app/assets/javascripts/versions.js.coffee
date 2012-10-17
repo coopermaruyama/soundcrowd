@@ -17,14 +17,21 @@ $ ->
 	# 		if data.context
 	# 			progress = parseInt(data.loaded / data.total * 100, 10)
 	# 			data.context.find('.bar').css('width', progress + '%')
+	window.createPlayer = (id, track) ->
+		$("#jquery-jplayer-" + id).jPlayer
+			ready: ->
+				$(this).jPlayer "setMedia",
+					m4a: track
+					oga: "http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg"
 
-	$('.jp-jplayer').jPlayer
-		ready: ->
-			$(this).jPlayer "setMedia"
-				m4a: $(this).attr('title')
-				oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
-		swfPath: "/assets"
-		supplied: "m4a, oga"
+
+			play: -> # To avoid both jPlayers playing together.
+				$(this).jPlayer "pauseOthers"
+
+			swfPath: "/assets"
+			supplied: "m4a, oga"
+			cssSelectorAncestor: "#jp_container_" + id
+
 
 	$(".direct-upload").each ->
 		form = $(this)

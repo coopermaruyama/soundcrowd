@@ -18,10 +18,10 @@ $ ->
 				progress = parseInt(data.loaded / data.total * 100, 10)
 				data.context.find('.bar').css('width', progress + '%')
 
-	$('.jp-jplayer').jPlayer
-		ready: ->
-			$(this).jPlayer "setMedia"
-				mp3: $(this).attr('title')
-				oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
-		swfPath: "/assets"
-		supplied: "mp3, oga"
+	# $('.jp-jplayer').jPlayer
+	# 	ready: ->
+	# 		$(this).jPlayer "setMedia"
+	# 			mp3: $(this).attr('title')
+	# 			oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+	# 	swfPath: "/assets"
+	# 	supplied: "mp3, oga"
