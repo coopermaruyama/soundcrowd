@@ -6,14 +6,21 @@
 	%input{type: :hidden, name: :signature}
 	%input{type: :hidden, name: :success_action_status, value: "201"}
 
-	/ %input{type: :hidden, name: :user_id, value: current_user.id}
-	/ %input{type: :hidden, name: :production_id, value: @production.id}
-	/ %input{type: :hidden, name: :parent_id, value: @parent.id}
 	%input{type: :file, name: :file }
-	/ %input{type: :submit}
+
+%form{:action => "/waveform/generate", :method => "post", :enctype => "multipart/form-data", :class => 'waveform-upload', :id => "waveform_form"}
+	%input{type: :hidden, name: :key}
+	%input{type: :hidden, name: "AWSAccessKeyId", value: ENV['AWS_ACCESS_KEY_ID']}
+	%input{type: :hidden, name: :acl, value: 'public-read'}
+	%input{type: :hidden, name: :policy}
+	%input{type: :hidden, name: :signature}
+	%input{type: :hidden, name: :success_action_status, value: "201"}
+
+	%input#waveform_file_url{type: :file, name: :file }
 
 = form_for @version, :html => {:multipart => true, :id => "new_version"} do |f|
 	= f.hidden_field :remote_audio_file_url, :id => "real_audio_file"
+	= f.hidden_field :waveform, :id => "waveform_file"
 	= f.hidden_field :user_id
 	= f.hidden_field :production_id
 	= f.hidden_field :parent_id

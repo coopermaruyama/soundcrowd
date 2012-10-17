@@ -9,6 +9,7 @@ class Version < ActiveRecord::Base
 	validates :user_id, :presence => true 
 	validates :production_id, :presence => true
 	before_create :generate_title
+	after_save :generate_waveform
 
 	attr_accessible :user_id, :forked_from, :audio_file, :source_file, :production_id, :parent_id, :remote_audio_file_url, :remote_source_file_url, :waveform, :remote_waveform_url #remote attr's are used for being able to use carrierwave's remote file upload helpers.
 
@@ -20,6 +21,16 @@ class Version < ActiveRecord::Base
 	
 	def user
 		User.find(self.user_id)
+	end
+
+	def generate_waveform
+		if self.waveform.blank?
+			source = self.audio_file.to_s.gsub("https","http")
+		    file = `ffmpeg -i #{source} -f wav -y 'public/converted.wav'`
+	        wave = `waveform -F 'public/converted.wav' 'public/waveform.png'`
+	        self.waveform = File.open('public/waveform.png')
+	        self.save!
+       end
 	end
 end
 # == Schema Information

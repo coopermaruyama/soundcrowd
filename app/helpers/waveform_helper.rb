@@ -1,0 +1,2 @@
+module WaveformHelper
+end

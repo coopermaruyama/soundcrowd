@@ -98,6 +98,7 @@ GEM
     faker (1.1.2)
       i18n (~> 0.5)
     ffi (1.0.11)
+    ffmpeg (0.2.5)
     fog (1.3.1)
       builder
       excon (~> 0.13.0)
@@ -261,6 +262,7 @@ DEPENDENCIES
   devise
   factory_girl_rails (= 3.3.0)
   faker
+  ffmpeg
   fog (~> 1.3.1)
   growl
   guard-rspec
@@ -272,6 +274,7 @@ DEPENDENCIES
   randexp
   resque
   rspec-rails (>= 2.8.1)
+  ruby-audio
   sass
   sass-rails (~> 3.2.3)
   spork (= 0.9.0)
