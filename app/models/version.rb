@@ -3,13 +3,14 @@ class Version < ActiveRecord::Base
 	belongs_to :user_production
 
 	mount_uploader :audio_file, AudioUploader #for uploading audio files
+	mount_uploader :source_file, AudioUploader
+	mount_uploader :waveform, WaveformUploader #process waveforms & upload 
 
 	validates :user_id, :presence => true 
 	validates :production_id, :presence => true
-	
-	attr_accessible :user_id, :forked_from, :audio_file, :source_file, :production_id, :parent_id, :remote_audio_file_url
-
 	before_create :generate_title
+
+	attr_accessible :user_id, :forked_from, :audio_file, :source_file, :production_id, :parent_id, :remote_audio_file_url, :remote_source_file_url, :waveform, :remote_waveform_url #remote attr's are used for being able to use carrierwave's remote file upload helpers.
 
 	def generate_title
 		if self.title.blank?
