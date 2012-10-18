@@ -4,3 +4,31 @@
 .nested_versions {
   margin-left: 30px;
 }
+.main {
+	text-align:center;
+}
+.container {
+	width: 600px;
+	margin: 0 auto;
+}
+#source-target, #bounced-file-target {
+	border-radius: 9px;
+	height: 48px;
+	background-color: rgba(255,255,255,.7);
+	padding: 10px 10px;
+	box-shadow: inset 0px 1px 3px rgba(0, 0, 0, .3), 0px 1px rgba(255,255,255,.9);
+}
+.dropZone.hoverdrop {
+	box-shadow: inset 0px 1px 3px rgba(0, 0, 0, .3), 0px 1px rgba(255,255,255,.9),0px 0px 36px #DB8400 !important;
+}
+
+h2.drop-text {
+	position: absolute;
+	left:50%;
+	 text-shadow: 1px 1px 1px white, 0 0 0 rgba(0,0,0,.45), 1px 1px 1px white;
+    -webkit-font-smoothing: antialiased;
+    color: rgba(216, 187, 174, 0.65);
+}
+input[type=file] {
+	display:none;
+}

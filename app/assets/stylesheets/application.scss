@@ -74,3 +74,7 @@ a.back {
 			lighten($color, 20%);
 	}
 }
+.em {
+	color:darken($orange,20%);
+	font-weight: bold;
+}
