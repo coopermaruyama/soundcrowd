@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.1'
 
 gem "fog", "~> 1.3.1"
-gem 'sqlite3-ruby'
+
 gem 'sass'
 gem "backbone-on-rails"
 gem 'haml'
@@ -41,6 +41,10 @@ group :development do
   gem 'annotate', '~> 2.4.1.beta'
 end
 
+group :production do
+  gem "mysql"
+end
+
 group :test do
   gem 'rspec-rails', ">= 2.8.1"
   gem "factory_girl_rails", '3.3.0'
@@ -53,4 +57,5 @@ end
 
 group :test, :development do
   gem "faker"
+  gem 'sqlite3-ruby'
 end

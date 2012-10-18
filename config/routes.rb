@@ -14,4 +14,5 @@ Soundcrowd::Application.routes.draw do
   end
   resources :versions
   match '*path', to: 'main#index'
+
 end

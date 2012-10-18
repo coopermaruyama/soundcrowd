@@ -140,6 +140,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.18)
     multi_json (1.3.6)
+    mysql (2.8.1)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.6.0)
@@ -269,6 +270,7 @@ DEPENDENCIES
   haml
   jquery-fileupload-rails
   jquery-rails
+  mysql
   oily_png
   rails (= 3.2.1)
   randexp
