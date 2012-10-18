@@ -32,9 +32,10 @@ $useIEFilters: 0;
 // ---- /LEGACY IE SUPPORT USING FILTERS ----
 
 // GLOBAL CSS VARIABLES
-$orange: #e8b772;
-$bglight: #efeae1;
-$bgdark:#ebd6b1;
+$orange: #fb9500;
+$bglight: #F5F2ED ;
+$bgdark:#F5E8D1;
+$blue:#0093AF;
 //
 //
 //GLOBAL PLUGINS
@@ -129,7 +130,22 @@ $bgdark:#ebd6b1;
     -ms-filter: quote(progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}'));
   }
 }
+@mixin tri-gradient($top,$middle,$bottom) {
+  background-image: linear-gradient(bottom, $top 15%, $middle 58%, $bottom 79%);
+background-image: -o-linear-gradient(bottom, $top 15%, $middle 58%, $bottom 79%);
+background-image: -moz-linear-gradient(bottom, $top 15%, $middle 58%, $bottom 79%);
+background-image: -webkit-linear-gradient(bottom, $top 15%, $middle 58%, $bottom 79%);
+background-image: -ms-linear-gradient(bottom, $top 15%, $middle 58%, $bottom 79%);
 
+background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(0.15, $top),
+  color-stop(0.58, $middle),
+  color-stop(0.79, $bottom)
+);
+}
 @mixin rgba-bg ($hex, $alpha, $ie: $useIEFilters) {     
   @if $ie == 1 { 
     background-color: none;

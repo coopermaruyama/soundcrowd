@@ -27,7 +27,7 @@ class Version < ActiveRecord::Base
 		if self.waveform.blank?
 			source = self.audio_file.to_s.gsub("https","http")
 		    file = `ffmpeg -i #{source} -f wav -y 'public/converted.wav'`
-	        wave = `waveform -F 'public/converted.wav' 'public/waveform.png'`
+	        wave = `waveform -W360 -H55 -ctransparent -b#ffffff -mpeak -F 'public/converted.wav' 'public/waveform.png'`
 	        self.waveform = File.open('public/waveform.png')
 	        self.save!
        end

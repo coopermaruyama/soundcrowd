@@ -1,22 +1,24 @@
 // Place all the styles related to the versions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'all';
 .nested_versions {
   margin-left: 30px;
 }
-.main {
-	text-align:center;
-}
-.container {
+
+.newVersion {
 	width: 600px;
 	margin: 0 auto;
+	text-align: center;
 }
 #source-target, #bounced-file-target {
 	border-radius: 9px;
 	height: 48px;
-	background-color: rgba(255,255,255,.7);
+	background-color:$blue;
 	padding: 10px 10px;
 	box-shadow: inset 0px 1px 3px rgba(0, 0, 0, .3), 0px 1px rgba(255,255,255,.9);
+	margin-bottom: 15px;
+	border:3px dashed rgba(0, 0, 0,.5);
 }
 .dropZone.hoverdrop {
 	box-shadow: inset 0px 1px 3px rgba(0, 0, 0, .3), 0px 1px rgba(255,255,255,.9),0px 0px 36px #DB8400 !important;
@@ -25,10 +27,25 @@
 h2.drop-text {
 	position: absolute;
 	left:50%;
-	 text-shadow: 1px 1px 1px white, 0 0 0 rgba(0,0,0,.45), 1px 1px 1px white;
-    -webkit-font-smoothing: antialiased;
-    color: rgba(216, 187, 174, 0.65);
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.69), 0 0 0 black, 1px 1px 1px rgba(0, 0, 0, .7);
+	-webkit-font-smoothing: antialiased;
+	color: rgba(248, 248, 248, 1);
 }
 input[type=file] {
 	display:none;
+}
+input[type=submit] {
+// 	text-shadow: 0px 1px 1px white, 0 0 0 rgba(0,0,0,.45), 0px 1px 1px white;
+	margin-top: 10px;
+	color:rgba(255,255,255,1);
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size:20px;
+	padding: 0px 20px;
+	height: 60px;
+	border-radius:70px;
+	border: 1px solid $orange;
+	border-top: 1px solid lighten($orange, 40%);
+	border-bottom: 1px solid darken($orange, 20%);
+	@include linear-gradient(lighten($orange, 5%),darken($orange,5%));
 }

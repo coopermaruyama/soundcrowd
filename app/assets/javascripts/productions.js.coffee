@@ -17,7 +17,7 @@ $ ->
 			if data.context
 				progress = parseInt(data.loaded / data.total * 100, 10)
 				data.context.find('.bar').css('width', progress + '%')
-
+	$('.jp-seek-bar,.jp-play-bar').each ->
 	# $('.jp-jplayer').jPlayer
 	# 	ready: ->
 	# 		$(this).jPlayer "setMedia"

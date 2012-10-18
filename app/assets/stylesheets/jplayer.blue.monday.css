@@ -33,56 +33,13 @@ div.jp-video {
 div.jp-audio {
 	width:420px;
 }
-div.jp-video-270p {
-	width:480px;
-}
-div.jp-video-360p {
-	width:640px;
-}
-div.jp-video-full {
-	/* Rules for IE6 (full-screen) */
-	width:480px;
-	height:270px;
-	/* Rules for IE7 (full-screen) - Otherwise the relative container causes other page items that are not position:static (default) to appear over the video/gui. */
-	position:static !important; position:relative
-}
-
-/* The z-index rule is defined in this manner to enable Popcorn plugins that add overlays to video area. EG. Subtitles. */
-div.jp-video-full div div {
-	z-index:1000;
-}
-
-div.jp-video-full div.jp-jplayer {
-	top: 0;
-	left: 0;
-	position: fixed !important; position: relative; /* Rules for IE6 (full-screen) */
-	overflow: hidden;
-}
-
-div.jp-video-full div.jp-gui {
-	position: fixed !important; position: static; /* Rules for IE6 (full-screen) */
-	top: 0;
-	left: 0;
-	width:100%;
-	height:100%;
-	z-index:1001; /* 1 layer above the others. */
-}
-
-div.jp-video-full div.jp-interface {
-	position: absolute !important; position: relative; /* Rules for IE6 (full-screen) */
-	bottom: 0;
-	left: 0;
-}
-
 div.jp-interface {
 	position: relative;
 	background-color:#eee;
 	width:100%;
 }
 
-div.jp-audio div.jp-type-single div.jp-interface {
-	height:80px;
-}
+
 div.jp-audio div.jp-type-playlist div.jp-interface {
 	height:80px;
 }
@@ -109,10 +66,7 @@ div.jp-interface ul.jp-controls {
 	overflow:hidden;
 }
 
-div.jp-audio ul.jp-controls {
-	width: 380px;
-	padding:20px 20px 0 20px;
-}
+
 
 div.jp-video div.jp-type-single ul.jp-controls {
 	width: 78px;
@@ -133,54 +87,6 @@ div.jp-interface ul.jp-controls a {
 	display:block;
 	overflow:hidden;
 	text-indent:-9999px;
-}
-a.jp-play,
-a.jp-pause {
-	width:40px;
-	height:40px;
-}
-
-a.jp-play {
-	background: url("jplayer.blue.monday.jpg") 0 0 no-repeat;
-}
-a.jp-play:hover {
-	background: url("jplayer.blue.monday.jpg") -41px 0 no-repeat;
-}
-a.jp-pause {
-	background: url("jplayer.blue.monday.jpg") 0 -42px no-repeat;
-	display: none;
-}
-a.jp-pause:hover {
-	background: url("jplayer.blue.monday.jpg") -41px -42px no-repeat;
-}
-
-a.jp-stop, a.jp-previous, a.jp-next {
-	width:28px;
-	height:28px;
-	margin-top:6px;
-}
-
-a.jp-stop {
-	background: url("jplayer.blue.monday.jpg") 0 -83px no-repeat;
-	margin-left:10px;
-}
-
-a.jp-stop:hover {
-	background: url("jplayer.blue.monday.jpg") -29px -83px no-repeat;
-}
-
-a.jp-previous {
-	background: url("jplayer.blue.monday.jpg") 0 -112px no-repeat;
-}
-a.jp-previous:hover {
-	background: url("jplayer.blue.monday.jpg") -29px -112px no-repeat;
-}
-
-a.jp-next {
-	background: url("jplayer.blue.monday.jpg") 0 -141px no-repeat;
-}
-a.jp-next:hover {
-	background: url("jplayer.blue.monday.jpg") -29px -141px no-repeat;
 }
 
 /* @end */
@@ -211,16 +117,9 @@ div.jp-video div.jp-progress {
 	height:10px;
 }
 div.jp-seek-bar {
-	background: url("jplayer.blue.monday.jpg") 0 -202px repeat-x;
-	width:0px;
-	height:100%;
 	cursor: pointer;
 }
-div.jp-play-bar {
-	background: url("jplayer.blue.monday.jpg") 0 -218px repeat-x ;
-	width:0px;
-	height:100%;
-}
+
 
 /* The seeking class is added/removed inside jPlayer */
 div.jp-seeking-bg {

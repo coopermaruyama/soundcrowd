@@ -1,10 +1,10 @@
-%h1 Upload Your Version
-.container
+.container.newVersion
+	%h1 Upload Your Version
 	%p
 		You are about to fork 
 		%span.em #{@parent.user.username}'s 
 		version of #{@production.title} 
-	%h3{:style => "display:none;"} Upload the your track in .als format below
+	%h3 Upload the your track in .als format below
 	#source-target.dropZone
 		%h2.drop-text Drop File Here
 		%form{:action => "https://#{ENV['AWS_S3_BUCKET']}.s3.amazonaws.com", :method => "post", :enctype => "multipart/form-data", :class => '', :id => "source-form"}
@@ -30,14 +30,14 @@
 
 			%input{type: :file, name: :file }
 	.progress-container
-= form_for @version, :html => {:multipart => true, :id => "new_version"} do |f|
-	= f.hidden_field :remote_audio_file_url, :id => "real_audio_file"
-	= f.hidden_field :user_id
-	= f.hidden_field :production_id
-	= f.hidden_field :parent_id
-	= f.submit
-	%script#template-upload{:type => "text/x-tmpl"}
-		.upload.ui-progress-bar
-			.bar.ui-progress{:style => "width: 0%"}
-				%span
-					{%=o.name%}
+	= form_for @version, :html => {:multipart => true, :id => "new_version"} do |f|
+		= f.hidden_field :remote_audio_file_url, :id => "real_audio_file"
+		= f.hidden_field :user_id
+		= f.hidden_field :production_id
+		= f.hidden_field :parent_id
+		= f.submit
+		%script#template-upload{:type => "text/x-tmpl"}
+			.upload.ui-progress-bar
+				.bar.ui-progress{:style => "width: 0%"}
+					%span
+						{%=o.name%}

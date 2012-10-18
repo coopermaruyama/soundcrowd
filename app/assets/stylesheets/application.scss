@@ -5,9 +5,11 @@ html,body {
 	min-height: 100%;
 	height: 100%;
 	width: 100%;
-	@include linear-gradient($bglight, $bgdark);
+// 	@include linear-gradient($bglight, $bgdark);
+	background-color:#F7F2E8;
 	@include arial15;
 	position:relative;
+	-webkit-font-smoothing: antialiased;
 }
 
 header {
