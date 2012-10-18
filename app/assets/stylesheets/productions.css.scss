@@ -68,13 +68,22 @@ h2 {
 	font-size:46px;
 	margin: -5px 0 -10px 0;
 }
-
+.nested_versions .version:first-child .branch {
+		background: url('/assets/branch-line.png') no-repeat 0 0;
+		width: 119px;
+		height: 246px;
+		position: absolute;
+		z-index: 0;
+		left: -100px;
+		top:-78px;
+	}
 
 .version {
 	width:436px;
 	margin: 10px;
+	position: relative;
 	.version-info {
-		width:325px;
+		width:345px;
 		float:right;
 		h3 {
 			font-size: 30px;
@@ -87,7 +96,14 @@ h2 {
 			font-size: 20px;
 			margin-top: -5px;
 		}
+		
 	}
+	.avatar {
+		max-height:75px;
+		max-width:75px;
+		margin: 5px 5px 0px 0px;
+	}
+	
 	.jp-audio {
 		width: 436px;
 		height:75px;
@@ -98,6 +114,7 @@ h2 {
 			box-shadow: 1px 1px 0px rgba(0, 0, 0, .1);
 			padding: 1px;
 			border-radius:4px;
+			z-index: 5;
 			.jp-controls {
 				width: 78px;
 				height: 100%;
