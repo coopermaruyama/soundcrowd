@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.1'
 
@@ -15,9 +15,9 @@ gem "waveform" #for creating waveform images
 gem "oily_png" #png manipulation for waveform
 gem "ffmpeg" #for converting to wav
 gem "ruby-audio"
-# gem "icanhasaudio", :git => "git://github.com/harukasan/icanhasaudio.git"
 
-gem "carrierwave"       #handle uploads
+
+gem "carrierwave"       
 gem "carrierwave_direct"
 
 gem "randexp"
@@ -26,8 +26,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem "jquery-fileupload-rails"
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
+
+  gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -54,3 +54,8 @@ end
 group :test, :development do
   gem "faker"
 end
+gem 'rubber'
+gem 'open4'
+gem 'gelf'
+gem 'graylog2_exceptions', :git => 'git://github.com/wr0ngway/graylog2_exceptions.git'
+gem 'graylog2-resque'
