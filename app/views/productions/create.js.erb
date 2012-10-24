@@ -1,0 +1,6 @@
+<% if @production.new_record? %>
+  alert("Failed to upload production: <%= j @painting.errors.full_messages.join(', ').html_safe %>");
+<% else %>
+	$('#create-status').append('Success').fadeIn(500);
+	$("#preview").append("<%= j render(@production) %>").fadeIn(700);
+<% end %>

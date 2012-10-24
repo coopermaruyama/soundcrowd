@@ -1,0 +1,34 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'all.css.scss';
+@import 'application.scss';
+.user-badge {
+	width: 70px;
+	height: 70px;
+	margin: 10px;
+	border: 2px solid #E8B772;
+	float: left;
+	padding: 5px;
+}
+.user-badge span {
+	color: #f99f1e;
+	@include bebas;
+	font-size: 25px;
+	word-wrap: break-word;
+	text-shadow: 0px 0px 3px black;
+	line-height: .8em;
+	letter-spacing: 1px;
+}
+
+button.submit {
+	$orange2:
+		darken($orange, 20%);
+	@include linear-gradient($orange, $orange2);
+	@include border-radius(4px);
+	@include bebas;
+	font-size: 30px;
+	width: 150px;
+	color: lighten($orange, 25%);
+	text-shadow: 0px -1px 1px rgba(0,0,0,.5);
+}

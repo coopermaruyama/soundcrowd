@@ -1,0 +1,16 @@
+.version
+	.branch
+	= avatar(version.user)
+	.version-info
+		%h3.version-title= version.title
+		%span.version-user
+			By: 
+			= link_to version.user.username, version.user
+		%span
+			Version: 
+			= version.id
+			= "  Forked from:"
+			= version.parent ? version.parent.id : "Nil"
+	.clr
+	= render :partial => "player", :locals => { :version => version }
+	

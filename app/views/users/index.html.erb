@@ -1,0 +1,15 @@
+<h1>All Users</h1>
+
+<% @users.each do |user| %>
+	<a href="<%= user_path(user) %>">
+		<div class="user-badge" style="background-image: url('<%= 
+		if FileTest.exist?("#{Rails.root}/app/assets/images/avatars/#{user.id}.png")
+			then image_path("avatars/#{user.id}.png")
+			else image_path("avatars/_default.png")
+				end %>')">
+			<span class="username"><%= user.username %></span>
+		</div>
+	</a>
+<% end  %>
+
+

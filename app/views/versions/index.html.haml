@@ -1,0 +1,19 @@
+- @production.versions.each do |version|
+	.version
+		= avatar(version.user)
+		.version-info
+			%h3.version-title= version.title
+			%span.version-user
+				By: 
+				= link_to version.user.username, version.user
+		.clr
+		= render :partial => "player", :locals => { :version => version }
+		.fork
+			%span Drop new versions here
+			= render :template => "/versions/new", :locals => {:version => version}
+			%script#template-upload{:type => "text/x-tmpl"}
+				.upload.ui-progress-bar
+					.bar.ui-progress{:style => "width: 0%"}
+						%span
+							{%=o.name%}
+	.children{:id => version.id}

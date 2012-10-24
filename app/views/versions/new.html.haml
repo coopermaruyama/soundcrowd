@@ -1,0 +1,43 @@
+.container.newVersion
+	%h1 Upload Your Version
+	%p
+		You are about to fork 
+		%span.em #{@parent.user.username}'s 
+		version of #{@production.title} 
+	%h3 Upload the your track in .als format below
+	#source-target.dropZone
+		%h2.drop-text Drop File Here
+		%form{:action => "https://#{ENV['AWS_S3_BUCKET']}.s3.amazonaws.com", :method => "post", :enctype => "multipart/form-data", :class => '', :id => "source-form"}
+			%input{type: :hidden, name: :key}
+			%input{type: :hidden, name: "AWSAccessKeyId", value: ENV['AWS_ACCESS_KEY_ID']}
+			%input{type: :hidden, name: :acl, value: 'public-read'}
+			%input{type: :hidden, name: :policy}
+			%input{type: :hidden, name: :signature}
+			%input{type: :hidden, name: :success_action_status, value: "201"}
+
+			%input{type: :file, name: :file }
+
+	%h3 Upload the bounced version of your track below
+	#bounced-file-target.dropZone
+		%h2.drop-text Drop File Here
+		%form{:action => "https://#{ENV['AWS_S3_BUCKET']}.s3.amazonaws.com", :method => "post", :enctype => "multipart/form-data", :class => 'direct-upload'}
+			%input{type: :hidden, name: :key}
+			%input{type: :hidden, name: "AWSAccessKeyId", value: ENV['AWS_ACCESS_KEY_ID']}
+			%input{type: :hidden, name: :acl, value: 'public-read'}
+			%input{type: :hidden, name: :policy}
+			%input{type: :hidden, name: :signature}
+			%input{type: :hidden, name: :success_action_status, value: "201"}
+
+			%input{type: :file, name: :file }
+	.progress-container
+	= form_for @version, :html => {:multipart => true, :id => "new_version"} do |f|
+		= f.hidden_field :remote_audio_file_url, :id => "real_audio_file"
+		= f.hidden_field :user_id
+		= f.hidden_field :production_id
+		= f.hidden_field :parent_id
+		= f.submit
+		%script#template-upload{:type => "text/x-tmpl"}
+			.upload.ui-progress-bar
+				.bar.ui-progress{:style => "width: 0%"}
+					%span
+						{%=o.name%}
