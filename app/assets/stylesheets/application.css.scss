@@ -5,8 +5,8 @@ html,body {
 	min-height: 100%;
 	height: 100%;
 	width: 100%;
-// 	@include linear-gradient($bglight, $bgdark);
-	background-color:#F7F2E8;
+	@include linear-gradient($bglight, $bgdark);
+// 	background-color:#F7F2E8;
 	@include arial15;
 	position:relative;
 	-webkit-font-smoothing: antialiased;
@@ -15,7 +15,7 @@ html,body {
 header {
 	width: 100%;
 	height: 24px;
-	@include linear-gradient(#3d3d3d, #2a2a2a);
+	@include linear-gradient(#333, black);
 	box-shadow: 0px 1px 3px rgba(0,0,0,.4);
 	padding: 13px 0px;
 	font-size: 14px;
