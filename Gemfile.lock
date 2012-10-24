@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/khurramzaman/ruby-audio.git
+  revision: da115125551aa074ba59b6c2f1ac1e25260d5a9b
+  specs:
+    ruby-audio (1.6.1)
+
+GIT
   remote: git://github.com/wr0ngway/graylog2_exceptions.git
   revision: 797924acd1aa89852605230812d8cfd27da90969
   specs:
@@ -231,7 +237,6 @@ GEM
       json
       open4
       thor
-    ruby-audio (1.6.1)
     ruby-hmac (0.4.0)
     rubyzip (0.9.8)
     sass (3.1.19)
@@ -315,7 +320,7 @@ DEPENDENCIES
   resque
   rspec-rails (>= 2.8.1)
   rubber
-  ruby-audio
+  ruby-audio!
   sass
   sass-rails (~> 3.2.3)
   spork (= 0.9.0)
