@@ -10,11 +10,11 @@ gem 'haml'
 gem "devise"
 gem "resque"
 gem "ancestry"
-
-gem "waveform" #for creating waveform images
+gem 'libv8'
+# gem "waveform" #for creating waveform images
 gem "oily_png" #png manipulation for waveform
 gem "ffmpeg" #for converting to wav
-gem "ruby-audio"
+# gem "ruby-audio"
 
 
 gem "carrierwave"       

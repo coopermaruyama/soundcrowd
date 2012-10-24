@@ -67,7 +67,7 @@
   - !ruby/object:Rubber::Configuration::RoleItem
     name: web_tools
     options: {}
-  instance_id: i-59a65625
+  instance_id: i-5b44e427
   image_type: m1.small
   image_id: ami-eafa5883
   security_groups:
@@ -94,10 +94,10 @@
   - soundcrowd_production_graylog_server
   - soundcrowd_production_graylog_web
   - soundcrowd_production_haproxy
-  external_host: ec2-23-22-189-57.compute-1.amazonaws.com
-  external_ip: 23.22.189.57
-  internal_host: domU-12-31-39-0A-44-55.compute-1.internal
-  internal_ip: 10.211.71.163
+  external_host: ec2-23-22-108-153.compute-1.amazonaws.com
+  external_ip: 23.22.108.153
+  internal_host: ip-10-4-59-85.ec2.internal
+  internal_ip: 10.4.59.85
   zone: us-east-1a
   platform: linux
   root_device_type: instance-store
