@@ -6,9 +6,8 @@ GIT
       chunky_png
       ruby-audio-heroku
 
-GIT
-  remote: git://github.com/khurramzaman/ruby-audio-heroku.git
-  revision: 8fd52a31d7e0630a68dacf1c4d887fcb830e5dfc
+PATH
+  remote: vendor/ruby-audio-heroku
   specs:
     ruby-audio-heroku (1.6.1)
 
