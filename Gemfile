@@ -14,7 +14,7 @@ gem "ancestry"
 gem "waveform" #for creating waveform images
 gem "oily_png" #png manipulation for waveform
 gem "ffmpeg" #for converting to wav
-gem "ruby-audio"
+gem "ruby-audio", :git => "git://github.com/khurramzaman/ruby-audio.git"
 # gem "icanhasaudio", :git => "git://github.com/harukasan/icanhasaudio.git"
 
 gem "carrierwave"       #handle uploads
