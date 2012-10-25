@@ -13,7 +13,7 @@ gem "ancestry"
 gem "waveform", :git => "git://github.com/coopermaruyama/waveform.git" #for creating waveform images
 gem "oily_png" #png manipulation for waveform
 gem "ffmpeg" #for converting to wav
-gem 'ruby-audio-heroku', '= 1.6.1', :path => "vendor/ruby-audio-heroku/"
+gem 'ruby-audio-heroku', :git => "git://github.com/khurramzaman/ruby-audio-heroku.git"
 # gem "icanhasaudio", :git => "git://github.com/harukasan/icanhasaudio.git"
 
 gem "carrierwave"       #handle uploads
@@ -56,4 +56,5 @@ end
 
 group :test, :development do
   gem "faker"
+  gem 'sqlite3'
 end
