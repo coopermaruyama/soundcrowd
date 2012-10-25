@@ -15,7 +15,7 @@ class Version < ActiveRecord::Base
 
 	def generate_title
 		if self.title.blank?
-			self.title = /[:word:]-[:word:]-\d{1}/.gen
+			self.title = rand(999).to_s
 		end
 	end
 	
