@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/khurramzaman/ruby-audio.git
-  revision: 320ceb9342cefe9e2fe4a1d76051830dbe2e7c04
+  remote: git@github.com:coopermaruyama/ruby-audio.git
+  revision: a6e329cfd8cf98de7199c7b587bd19af9b4b4697
   specs:
     ruby-audio (1.6.1)
 
