@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/khurramzaman/ruby-audio-heroku.git
+  revision: 8fd52a31d7e0630a68dacf1c4d887fcb830e5dfc
+  specs:
+    ruby-audio-heroku (1.6.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -196,7 +202,6 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.10.0)
-    ruby-audio-heroku (1.6.2)
     ruby-hmac (0.4.0)
     rubyzip (0.9.8)
     sass (3.1.19)
@@ -269,7 +274,7 @@ DEPENDENCIES
   randexp
   resque
   rspec-rails (>= 2.8.1)
-  ruby-audio-heroku
+  ruby-audio-heroku!
   sass
   sass-rails (~> 3.2.3)
   spork (= 0.9.0)
