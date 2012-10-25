@@ -33,7 +33,7 @@ end
 
 gem 'jquery-rails'
 
-gem :production do 
+group :production do 
   gem 'pg'
 end
 
