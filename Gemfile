@@ -10,7 +10,7 @@ gem "devise"
 gem "resque"
 gem "ancestry"
 
-# gem "waveform", :path => 'vendor/waveform' #for creating waveform images
+gem "waveform", :git => "git://github.com/coopermaruyama/waveform.git" #for creating waveform images
 gem "oily_png" #png manipulation for waveform
 gem "ffmpeg" #for converting to wav
 gem 'ruby-audio-heroku', :git => "git://github.com/khurramzaman/ruby-audio-heroku.git"
