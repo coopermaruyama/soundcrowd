@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/coopermaruyama/waveform.git
+  revision: 8c94d6fee309f7539a29020c973983e8193d3d2e
+  specs:
+    waveform (0.1.1)
+      chunky_png
+      ruby-audio-heroku
+
+GIT
   remote: git://github.com/khurramzaman/ruby-audio-heroku.git
   revision: 8fd52a31d7e0630a68dacf1c4d887fcb830e5dfc
   specs:
@@ -278,3 +286,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   spork (= 0.9.0)
   uglifier (>= 1.0.3)
+  waveform!
