@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.1'
 
 gem "fog", "~> 1.3.1"
-gem 'sqlite3-ruby'
 gem 'sass'
 gem "backbone-on-rails"
 gem 'haml'
@@ -33,6 +32,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem :production do 
+  gem 'pg'
+end
 
 group :development do
   gem 'rspec-rails', ">= 2.8.1"
