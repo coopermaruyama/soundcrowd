@@ -18,6 +18,7 @@ gem 'ruby-audio-heroku', :git => "git://github.com/khurramzaman/ruby-audio-herok
 
 gem "carrierwave"       #handle uploads
 gem "carrierwave_direct"
+gem "aws-s3"
 
 gem "randexp"
 

@@ -3,7 +3,7 @@ class Version < ActiveRecord::Base
 	belongs_to :user_production
 
 	mount_uploader :audio_file, AudioUploader #for uploading audio files
-	mount_uploader :source_file, AudioUploader
+	# mount_uploader :source_file, AudioUploader
 	mount_uploader :waveform, WaveformUploader #process waveforms & upload 
 
 	validates :user_id, :presence => true 
@@ -23,9 +23,13 @@ class Version < ActiveRecord::Base
 		User.find(self.user_id)
 	end
 
+	def get_url
+		self.audio_file_url.split('/')[0..-2].join('/') + "/" + CGI.escape(self.audio_file_url.split('/')[-1])
+	end
+
 	def generate_waveform
 		if self.waveform.blank?
-			source = self.audio_file.to_s.gsub("https","http")
+			source = self.get_url.to_s.gsub("https","http")
 		    file = `ffmpeg -i #{source} -f wav -y 'public/converted.wav'`
 	        wave = `waveform -W360 -H55 -ctransparent -b#ffffff -mpeak -F 'public/converted.wav' 'public/waveform.png'`
 	        self.waveform = File.open('public/waveform.png')

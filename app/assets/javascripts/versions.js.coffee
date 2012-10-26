@@ -26,10 +26,12 @@ $ ->
 		$(this).removeClass('hoverdrop')
 
 	window.createPlayer = (id, track) ->
+		format = /\.m4a/.test(track) ? "m4a" : "mp3"
 		$("#jquery-jplayer-" + id).jPlayer
 			ready: ->
 				$(this).jPlayer "setMedia",
 					m4a: track
+					mp3: track
 					oga: "http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg"
 
 
@@ -37,7 +39,7 @@ $ ->
 				$(this).jPlayer "pauseOthers"
 
 			swfPath: "/assets"
-			supplied: "m4a, oga"
+			supplied: "mp3, oga"
 			cssSelectorAncestor: "#jp_container_" + id
 
 
