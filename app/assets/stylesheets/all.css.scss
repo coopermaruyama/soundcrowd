@@ -35,7 +35,7 @@ $useIEFilters: 0;
 $orange: #fb9500;
 $bglight: #F5F2ED ;
 $bgdark:#F5E8D1;
-$blue:#0093AF;
+$blue:#00579c;
 //
 //
 //GLOBAL PLUGINS
@@ -131,19 +131,19 @@ $blue:#0093AF;
   }
 }
 @mixin tri-gradient($top,$middle,$bottom) {
-  background-image: linear-gradient(bottom, $top 15%, $middle 58%, $bottom 79%);
-background-image: -o-linear-gradient(bottom, $top 15%, $middle 58%, $bottom 79%);
-background-image: -moz-linear-gradient(bottom, $top 15%, $middle 58%, $bottom 79%);
-background-image: -webkit-linear-gradient(bottom, $top 15%, $middle 58%, $bottom 79%);
-background-image: -ms-linear-gradient(bottom, $top 15%, $middle 58%, $bottom 79%);
+  background-image: linear-gradient(bottom, $top 20%, $middle 50%, $bottom 80%);
+background-image: -o-linear-gradient(bottom, $top 20%, $middle 50%, $bottom 80%);
+background-image: -moz-linear-gradient(bottom, $top 20%, $middle 50%, $bottom 80%);
+background-image: -webkit-linear-gradient(bottom, $top 20%, $middle 50%, $bottom 80%);
+background-image: -ms-linear-gradient(bottom, $top 20%, $middle 50%, $bottom 80%);
 
 background-image: -webkit-gradient(
   linear,
   left bottom,
   left top,
-  color-stop(0.15, $top),
-  color-stop(0.58, $middle),
-  color-stop(0.79, $bottom)
+  color-stop(0.20, $top),
+  color-stop(0.50, $middle),
+  color-stop(0.80, $bottom)
 );
 }
 @mixin rgba-bg ($hex, $alpha, $ie: $useIEFilters) {     

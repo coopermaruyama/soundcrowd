@@ -58,8 +58,8 @@ a {
 	}
 	
 	&:hover {
-		color:lighten($orange, 10%);
-		text-decoration: underline;
+
+		text-decoration: none;
 	}
 }
 a.back {
@@ -79,4 +79,14 @@ a.back {
 .em {
 	color:darken($orange,20%);
 	font-weight: bold;
+}
+span.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: .3;
+	background-color: lighten($blue,70%);
+	display:none;
 }

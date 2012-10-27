@@ -21,4 +21,7 @@
 				$(function() {
 				window.createPlayer("#{version.id}", "#{version.get_url}");
 				});
-= link_to "Fork", "/productions/#{@production.id}/versions/#{version.id}/new"
+.actions
+	= link_to image_tag('icons/18px/smiley.png',:class => "icon folloe")+"Follow This", "#", :class => "follow"
+	= link_to image_tag('icons/18px/plus.png',:class => "icon download")+"Download", "#", :class => "download"
+	= link_to image_tag('icons/18px/fork.png',:class => "icon fork")+"Fork", "/productions/#{@production.id}/versions/#{version.id}/new", :class => "fork"
