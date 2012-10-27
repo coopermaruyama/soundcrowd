@@ -21,7 +21,6 @@ gem "carrierwave_direct"
 gem "aws-s3"
 
 gem "randexp"
-
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

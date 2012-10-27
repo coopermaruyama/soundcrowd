@@ -3,7 +3,7 @@ class Version < ActiveRecord::Base
 	belongs_to :user_production
 
 	mount_uploader :audio_file, AudioUploader #for uploading audio files
-	# mount_uploader :source_file, AudioUploader
+	mount_uploader :source_file, AudioUploader
 	mount_uploader :waveform, WaveformUploader #process waveforms & upload 
 
 	validates :user_id, :presence => true 
