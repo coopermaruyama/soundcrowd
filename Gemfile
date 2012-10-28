@@ -57,4 +57,5 @@ end
 group :test, :development do
   gem "faker"
   gem 'sqlite3'
+  gem 'guard-spork'
 end
