@@ -1,9 +1,9 @@
 # encoding: utf-8
 
 class AudioUploader < CarrierWave::Uploader::Base
-  def extension_white_list
-    %w(m4a mp3 ogg wav)
-  end
+  # def extension_white_list
+  #   %w(m4a mp3 ogg wav)
+  # end
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick

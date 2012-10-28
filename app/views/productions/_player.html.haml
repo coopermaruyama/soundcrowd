@@ -1,4 +1,4 @@
-.jp-jplayer{:title => version.audio_file, :id => "jquery-jplayer-#{version.id}"}
+.jp-jplayer{:title => version.get_url, :id => "jquery-jplayer-#{version.id}"}
 .jp-audio{:id => "jp_container_#{version.id}"}
 	.jp-type-single
 		.jp-gui.jp-interface
@@ -11,7 +11,7 @@
 				.jp-progress
 					.jp-seek-bar
 						.jp-play-bar
-							%img{:src => "#{version.waveform}"}
+							%img.waveform{:src => "#{version.waveform}"}
 				.comments-container
 			.jp-no-solution
 				%span Update Required
@@ -19,6 +19,9 @@
 				%a{:href => "http://get.adobe.com/flashplayer/", :target => "_blank"} Flash plugin
 			%script{:type => "text/javascript"}
 				$(function() {
-				window.createPlayer("#{version.id}", "#{version.audio_file}");
+				window.createPlayer("#{version.id}", "#{version.get_url}");
 				});
-= link_to "Fork", "/productions/#{@production.id}/versions/#{version.id}/new"
+.actions
+	= link_to image_tag('icons/18px/smiley.png',:class => "icon folloe")+"Follow This", "#", :class => "follow"
+	= link_to image_tag('icons/18px/plus.png',:class => "icon download")+"Download", "#", :class => "download"
+	= link_to image_tag('icons/18px/fork.png',:class => "icon fork")+"Fork", "/productions/#{@production.id}/versions/#{version.id}/new", :class => "fork"

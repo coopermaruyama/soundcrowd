@@ -1,7 +1,0 @@
-pkg/*
-/rdoc/
-*.bundle
-*.so
-*.dll
-/tmp
-/ports

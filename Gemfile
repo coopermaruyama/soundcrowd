@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.1'
 
 gem "fog", "~> 1.3.1"
-gem 'sqlite3-ruby'
 gem 'sass'
 gem "backbone-on-rails"
 gem 'haml'
@@ -11,17 +10,17 @@ gem "devise"
 gem "resque"
 gem "ancestry"
 
-gem "waveform" #for creating waveform images
+gem "waveform", :git => "git://github.com/coopermaruyama/waveform.git" #for creating waveform images
 gem "oily_png" #png manipulation for waveform
 gem "ffmpeg" #for converting to wav
-gem "ruby-audio"
+gem 'ruby-audio-heroku', :git => "git://github.com/khurramzaman/ruby-audio-heroku.git"
 # gem "icanhasaudio", :git => "git://github.com/harukasan/icanhasaudio.git"
 
 gem "carrierwave"       #handle uploads
 gem "carrierwave_direct"
+gem "aws-s3"
 
 gem "randexp"
-
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -33,6 +32,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :production do 
+  gem 'pg'
+end
 
 group :development do
   gem 'rspec-rails', ">= 2.8.1"
@@ -53,4 +56,5 @@ end
 
 group :test, :development do
   gem "faker"
+  gem 'sqlite3'
 end

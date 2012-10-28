@@ -2,15 +2,14 @@
 	.branch
 	= avatar(version.user)
 	.version-info
-		%h3.version-title= version.title
+		%h3.version-title= version.user.username
 		%span.version-user
-			By: 
-			= link_to version.user.username, version.user
+			Code Name: 
+			= version.title
+			.clr
+			=link_to "see all forks", version.user
+			
 		%span
-			Version: 
-			= version.id
-			= "  Forked from:"
-			= version.parent ? version.parent.id : "Nil"
 	.clr
 	= render :partial => "player", :locals => { :version => version }
 	
