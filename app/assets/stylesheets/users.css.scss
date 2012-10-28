@@ -3,6 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'all.css.scss';
 @import 'application.css.scss';
+.avatar {
+	width:128px;
+	height:128px;
+	margin-right: 25px;
+	margin-top: 14px;
+}
+h1.username {
+	margin-bottom:-6px;
+}
+span.followers a{
+	@include bebas;
+	font-size:25px;
+	margin-right: 20px;
+	color:$blue;
+  transition: 0.5s color; /*animates for 1 second*/
+  -moz-transition: 0.5s color; /*For Firefox < 16.0*/
+  -webkit-transition: 0.5s color; /*For WebKit (Chrome, Safari)*/
+  &:hover {
+  	color: lighten($blue,15%);
+  }
+}
 .user-badge {
 	width: 70px;
 	height: 70px;
