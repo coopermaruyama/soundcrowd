@@ -1,6 +1,11 @@
 Soundcrowd::Application.routes.draw do
 
   devise_for :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   match 'users' => 'users#index', :as => 'users'
   match 'users/:id' => 'users#show', :as => 'user'
   resources :signed_urls, only: :index

@@ -48,6 +48,8 @@ end
 #  user_id       :integer
 #  created_at    :datetime        not null
 #  updated_at    :datetime        not null
-#  original_id   :integer
+#  title         :string(255)
+#  ancestry      :string(255)
+#  waveform      :string(255)
 #
 
