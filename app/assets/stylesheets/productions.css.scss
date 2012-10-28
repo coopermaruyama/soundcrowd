@@ -224,6 +224,9 @@ h2 {
 							background-repeat: no-repeat no-repeat;
 							height: 55px;
 							@include tri-gradient($blue,darken($blue,20%),$blue);
+							img.waveform {
+								opacity:.9;
+							}
 						}
 					}
 				}
