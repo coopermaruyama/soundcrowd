@@ -1,16 +1,14 @@
 Soundcrowd::Application.routes.draw do
-
   devise_for :users
   resources :users do
     member do
       get :following, :followers
     end
   end
-  match 'users' => 'users#index', :as => 'users'
-  match 'users/:id' => 'users#show', :as => 'user'
+  
   resources :signed_urls, only: :index
+  resources :relationships, only: [:create, :destroy]
   match '/signup', :to => 'users#new'
-  get "home/index"
   root :to => "home#index"
   
   match "/productions/:production_id/:controller/:id/:action" #productions/30/versions/30/new

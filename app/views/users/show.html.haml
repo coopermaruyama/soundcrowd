@@ -2,6 +2,6 @@
 	= stylesheet_link_tag "users"
 = avatar(@user)
 %h1.username= @user.username
-%span.followers= link_to "#{@user.followers.count} Followers", followers_user_path(@user)
-%span.followers= link_to "#{@user.followed_users.count} Following", following_user_path(@user)
-.clr
+%span.followers= link_to raw("<span id='followers'>")+"#{@user.followers.count}"+raw('</span>')+" Followers", followers_user_path(@user)
+%span.followers#following= link_to "#{@user.followed_users.count} Following", following_user_path(@user)
+= render "shared/follow_form", :user => @user

@@ -6,7 +6,8 @@ gem "fog", "~> 1.3.1"
 gem 'sass'
 gem "backbone-on-rails"
 gem 'haml'
-gem "devise"
+gem "will_paginate"
+
 gem "resque"
 gem "ancestry"
 
@@ -19,11 +20,13 @@ gem 'ruby-audio-heroku', :git => "git://github.com/khurramzaman/ruby-audio-herok
 gem "carrierwave"       #handle uploads
 gem "carrierwave_direct"
 gem "aws-s3"
+gem "devise", :git => "git://github.com/plataformatec/devise.git"
 
 gem "randexp"
+gem 'coffee-rails', '~> 3.2.1'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+
   gem "jquery-fileupload-rails"
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'

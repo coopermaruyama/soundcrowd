@@ -9,7 +9,7 @@ window.Soundcrowd =
 
 $(document).ready ->
 	Soundcrowd.init()
-	$('.version a').hover(
+	$('.lighten').hover(
 		->
 			unless $(this).children('span.overlay').length
 				$(this).append('<span class="overlay"></span>')

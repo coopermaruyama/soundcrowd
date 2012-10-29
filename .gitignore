@@ -14,3 +14,6 @@ doc/
 *~
 .project
 .DS_Store
+
+#Ignore seeding audio
+public/public/audio
