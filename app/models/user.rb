@@ -3,9 +3,9 @@ class User < ActiveRecord::Base
 	# :token_authenticatable, :confirmable,
 	# :lockable, :timeoutable and :omniauthable
 	devise :database_authenticatable, :registerable,
-				 :recoverable, :rememberable, :trackable, :validatable
+				 :recoverable, :rememberable, :trackable, :omniauthable
 	attr_accessible :email, :password, :password_confirmation, 
-									:remember_me, :username
+									:remember_me, :username, :provider, :uid
 	has_many :user_productions
 	has_many :productions, :through => :user_productions
 	has_many :versions, :through => :productions
@@ -16,6 +16,19 @@ class User < ActiveRecord::Base
  																		class_name: "Relationship",
  																		dependent: :destroy
  	has_many :followers, through: :reverse_relationships, source: :follower
+
+ 	def self.find_for_soundcloud_oauth(auth, signed_in_resource=nil)
+ 		user = User.where(:provider => auth.provider, :uid => auth.uid).first
+ 		unless user
+ 			user = User.create!(
+ 				provider: auth.provider,
+ 				uid: auth.uid,
+ 				username: auth.extra.raw_info.username,
+ 				password: auth.credentials.token
+ 				)
+ 		end
+ 		user
+ 	end
 
  	def following?(other_user)
  		relationships.find_by_followed_id(other_user.id)
