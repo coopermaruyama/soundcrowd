@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 	devise :database_authenticatable, :registerable,
 				 :recoverable, :rememberable, :trackable, :omniauthable
 	attr_accessible :email, :password, :password_confirmation, 
-									:remember_me, :username, :provider, :uid
+									:remember_me, :username, :provider, :uid, :token
 	has_many :user_productions
 	has_many :productions, :through => :user_productions
 	has_many :versions, :through => :productions
@@ -24,7 +24,8 @@ class User < ActiveRecord::Base
  				provider: auth.provider,
  				uid: auth.uid,
  				username: auth.extra.raw_info.username,
- 				password: auth.credentials.token
+ 				password: auth.credentials.token,
+ 				token: auth.credentials.token
  				)
  		end
  		user
