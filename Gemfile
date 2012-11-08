@@ -7,7 +7,10 @@ gem 'sass'
 gem "backbone-on-rails"
 gem 'haml'
 gem "will_paginate"
-
+gem "omniauth"
+gem "oauth2"
+gem 'omniauth-soundcloud'
+gem "soundcloud", :git => "git://github.com/soundcloud/soundcloud-ruby.git"
 gem "resque"
 gem "ancestry"
 
