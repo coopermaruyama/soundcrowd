@@ -1,0 +1,8 @@
+%header
+	= link_to logo, "/"
+	%nav
+		%a.signup
+		- if user_signed_in?
+			= link_to image_tag('btn-disconnect-m.png'), destroy_user_session_path, :class => "auth"
+		- else
+			= link_to image_tag('btn-connect-m.png'), user_omniauth_authorize_path(:soundcloud), :class => "auth"
