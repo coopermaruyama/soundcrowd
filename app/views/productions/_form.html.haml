@@ -3,8 +3,9 @@
 	= f.text_field :title
 	= f.fields_for :versions do |version|
 		= version.label :audio_file
-		= version.file_field :audio_file, multiple: true, name: "production[versions_attributes][0][audio_file]"
+		= version.file_field :audio_file, name: "sc_audio"
 		= version.hidden_field :user_id
+		= version.hidden_field :production_id
 	= f.submit
 %script#template-upload{:type => "text/x-tmpl"}
 	.upload.ui-progress-bar

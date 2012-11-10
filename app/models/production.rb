@@ -3,7 +3,7 @@ class Production < ActiveRecord::Base
 	has_many :user_productions
 	has_many :users, :through => :user_productions
 	accepts_nested_attributes_for :versions
-
+	after_create :identify_first_version
 	after_commit :set_creator
 
 	attr_accessible :creator_id, :title, :versions_attributes
@@ -17,6 +17,9 @@ class Production < ActiveRecord::Base
 			self.creator_id = self.users.first.id
 			self.save
 		end
+	end
+	def identify_first_version
+		self.versions.first.update_attribute(:production_id, self.id)
 	end
 end
 # == Schema Information

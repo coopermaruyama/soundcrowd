@@ -10,7 +10,22 @@ class ProductionsController < ApplicationController
   end
 
   def create
-    @production = current_user.productions.create!(params[:production].merge(:creator_id => current_user.id))
+    require 'soundcloud'
+    #create a client object with access token
+    client = Soundcloud.new(:access_token => current_user.token)
+    uploaded_io = params[:sc_audio]
+     # File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'w') do |file|
+     #    file.write(uploaded_io.read)
+     #  end
+    # upload an audio file
+    track = client.post('/tracks', :track => {
+      :title => params[:production][:title],
+      :asset_data => File.new(uploaded_io.path, 'rb')
+    })
+
+    @production = current_user.productions.new(params[:production].merge(:creator_id => current_user.id))
+    @production.versions.first.audio_file = track.permalink_url
+    @production.save!
   end  
 
 
