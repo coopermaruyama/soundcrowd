@@ -17,5 +17,21 @@ module ApplicationHelper
     end.join.html_safe
   end
 
+  def sc_player(version)
+    require 'soundcloud'
+    user = User.find(version.user_id)
+    # create a client object with your app credentials
+    client = Soundcloud.new(:client_id => user.token)
+
+    # get a tracks oembed data
+    track_url = version.audio_file
+    embed_info = client.get('/oembed', 
+      :url => track_url,
+      :maxwidth => "440px",
+      :maxheight => "110px")
+
+    # print the html for the player widget
+    return embed_info['html']
+  end
  
 end

@@ -1,27 +1,5 @@
-.jp-jplayer{:title => version.get_url, :id => "jquery-jplayer-#{version.id}"}
-.jp-audio{:id => "jp_container_#{version.id}"}
-	.jp-type-single
-		.jp-gui.jp-interface
-			%ul.jp-controls
-				%li.play-container
-					%a.jp-play{:href => "javascript:;", :tabindex => "1"} play
-				%li
-					%a.jp-pause{:href => "javascript:;", :tabindex => "1"} pause
-			.player-right
-				.jp-progress
-					.jp-seek-bar
-						.jp-play-bar
-							%img.waveform{:src => "#{version.waveform}"}
-				.comments-container
-			.jp-no-solution
-				%span Update Required
-				To play the media you will need to either update your browser to a recent version or update your
-				%a{:href => "http://get.adobe.com/flashplayer/", :target => "_blank"} Flash plugin
-			%script{:type => "text/javascript"}
-				$(function() {
-				window.createPlayer("#{version.id}", "#{version.get_url}");
-				});
+= raw sc_player(version)
 .actions
 	= link_to image_tag('icons/18px/smiley.png',:class => "icon follow")+"follow", "#", :class => "follow"
-	= link_to image_tag('icons/18px/plus.png',:class => "icon download")+"Download", version.get_url, :class => "download"
+	= link_to image_tag('icons/18px/plus.png',:class => "icon download")+"Download", version.audio_file, :class => "download"
 	= link_to image_tag('icons/18px/fork.png',:class => "icon fork")+"Fork", "/productions/#{@production.id}/versions/#{version.id}/new", :class => "fork"
