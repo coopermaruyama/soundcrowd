@@ -1,7 +1,17 @@
 - content_for :head do
 	= stylesheet_link_tag "home"
-%h1 Produce Music with Others
-%br
-= link_to "All Projects", productions_path
-%br
-= link_to "All Users", users_path
+.wrapper
+	%h1.home-title{:style => "margin-bottom:20px;"}
+		Create Great Music, 
+		%span{:style => "color:#E45B00;"} Together.
+	.homeleft
+		= image_tag('hero.png',:class => "hero")
+	.homeright
+		%h3 Download your favorite artists' music, in raw production format
+		%p SoundCrowd is a place for producing music as a crowd - By requiring the production file for all uploaded music, we hope to promote collaboration between artists. You can 'fork' songs within a production, so a production may consist of many different versions - and by allowing anyone to vote for a version, we hope to give listeners a voice in a production's direction.
+		%p Sign up - it's free. All you need is a SoundClound account.
+		= link_to image_tag('btn-connect-sc-l.png'), user_omniauth_authorize_path(:soundcloud), :class => "auth"
+		%br
+		= link_to "Check out some Projects", productions_path
+		%br
+		= link_to "See Users", users_path

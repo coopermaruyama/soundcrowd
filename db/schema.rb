@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121111133211) do
+ActiveRecord::Schema.define(:version => 20121111140210) do
 
   create_table "productions", :force => true do |t|
     t.string   "title"
@@ -72,12 +72,11 @@ ActiveRecord::Schema.define(:version => 20121111133211) do
     t.string   "audio_file"
     t.integer  "production_id"
     t.integer  "user_id"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.string   "title"
     t.string   "ancestry"
     t.string   "waveform"
-    t.integer  "votes",         :default => 0
   end
 
   add_index "versions", ["ancestry"], :name => "index_versions_on_ancestry"

@@ -6,8 +6,8 @@ html,body {
 	height: 100%;
 	width: 100%;
 // 	@include linear-gradient($bglight, $bgdark);
-	background-color:white;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	position:relative;
 	-webkit-font-smoothing: antialiased;
 	z-index: -10;
@@ -38,7 +38,25 @@ header {
 		}
 	}
 }
-
+.wrapper {
+	margin: 0 auto;
+	width: 1170px;
+}
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
+.homeleft{
+	width: 650px;
+	float: left;
+}
+.homeright {
+width:440px;
+padding: 10px 40px;
+float:right;
+}
 .main {
 	position: absolute;
 	top: 60px;

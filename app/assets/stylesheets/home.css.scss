@@ -1,9 +1,28 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'all';
 h1 {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	text-align: center;
 	font-weight: bold;
 	letter-spacing: -1px;
 }
+h2,h3 {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-weight: bold;
+	line-height: 1em;
+	text-transform: capitalize;
+}
+img.hero {
+	box-shadow:inset 0px 0px 10px #888;
+	border-radius:4px;
+	background-color:#f8f8f8;
+}
+a.auth {
+		opacity:.9;
+		@include transition(1s opacity);
+		&:hover {
+			opacity:1;
+		}
+	}

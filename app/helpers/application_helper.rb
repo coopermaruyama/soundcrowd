@@ -22,17 +22,21 @@ module ApplicationHelper
 
     # get a tracks oembed data
     track_url = version.audio_file
-    embed_info = client.get('/oembed', 
-      :url => track_url,
-      :show_artwork => false,
-      :show_bpm => true,
-      :show_comments =>true,
-      :download => true,
-      :maxwidth => "440px",
-      :maxheight => "160px")
-
+    begin
+      embed_info = client.get('/oembed', 
+        :url => track_url,
+        :show_artwork => false,
+        :show_bpm => true,
+        :show_comments =>true,
+        :download => true,
+        :maxwidth => "440px",
+        :maxheight => "160px")
+      return embed_info['html']
+    rescue
+      return "<div class='processing'>This track is still processing. Check back soon.</div>"
+    end
     # print the html for the player widget
-    return embed_info['html']
+    
   end
  
 end

@@ -32,7 +32,7 @@ $useIEFilters: 0;
 // ---- /LEGACY IE SUPPORT USING FILTERS ----
 
 // GLOBAL CSS VARIABLES
-$orange: #fb9500;
+$orange: #D55500;
 $bglight: #F5F2ED ;
 $bgdark:#F5E8D1;
 $blue:#00579c;
@@ -209,6 +209,6 @@ background-image: -webkit-gradient(
 // ==== /CSS3 SASS MIXINS ====
 
 html,body {
-  background-color:white;
-  background:white;
+//   background-color:white;
+//   background:white;
 }

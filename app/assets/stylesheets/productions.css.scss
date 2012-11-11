@@ -150,7 +150,25 @@ h2 {
 	width:436px;
 	margin: 10px;
 	position: relative;
+
+	iframe {
+		margin-top:5px;
+	}
 	
+	.processing {
+		width: 400px;
+		height: 50px;
+		padding: 45px 20px;
+		background-color: #E9E9E9;
+		border-radius: 5px;
+		border: 1px solid #888;
+		font-size: 25px;
+		text-align: center;
+		font-weight: bold;
+		color: #94AEB8;
+		text-shadow: 0px 1px white, 0px -1px #666;
+		margin-top: 5px;
+	}
 
 
 	.version-info {
@@ -183,7 +201,7 @@ h2 {
 
 	.votes {
 		position: absolute;
-		right: -268px;
+		right: -236px;
 		bottom: 39px;
 		margin-top: -54px;
 		text-align: center;
@@ -196,16 +214,16 @@ h2 {
 		}
 		h3.feature {
 			font-size: 27px;
-			margin-top: -27px;
+			margin-top: -11px;
 		}
 		&#feature {
 			bottom: 16px;
 			img {
 				&.down {
-				margin-top: 4px;
+				margin-top: 11px;
 				}
 				&.up {
-					margin-bottom: -11px;
+					margin-bottom: 3px;
 				}
 			}
 		}
@@ -216,10 +234,10 @@ h2 {
 				opacity:1;
 			}
 			&.down {
-				margin-top: -13px;
+				margin-top: 3px;
 			}
 			&.up {
-				margin-bottom: -9px;
+				margin-bottom: 4px;
 			}
 		}
 	}
