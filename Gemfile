@@ -6,6 +6,7 @@ gem "fog", "~> 1.3.1"
 gem 'sass'
 gem "backbone-on-rails"
 gem 'haml'
+gem "httparty"
 gem "will_paginate"
 gem "omniauth"
 gem "oauth2"

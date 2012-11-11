@@ -13,7 +13,9 @@ body,html {
 		display:block;
 	}
 }
-
+.main {
+	z-index: -4;
+}
 .project-head {
 	width: 100%;
 	height: 100px;
@@ -43,6 +45,7 @@ body,html {
 	vertical-align: 2px;
 }
 .project-main {
+	z-index: -2;
 	background-color: #f6f3ef;
 	border: 1px solid #E2DECF;
 	padding: 10px;
@@ -81,6 +84,7 @@ body,html {
 h1.title {
 	margin-top: -10px;
 	margin-bottom: -15px;
+	text-align: left;
 }
 span.creator-info {
 	font: normal normal normal 26px/1.5em Arial, sans-serif;
@@ -99,11 +103,11 @@ h2 {
 	.version:first-child {
 		margin-top: 45px;
 		.branch {
+			z-index: -1;
 			background: url('/assets/branch-line.png') no-repeat 0 0;
 			width: 119px;
 			height: 246px;
 			position: absolute;
-			z-index: 0;
 			left: -85px;
 			top:-95px;
 		}

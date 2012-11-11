@@ -327,6 +327,7 @@ DEPENDENCIES
   guard-rspec
   guard-spork
   haml
+  httparty
   jquery-fileupload-rails
   jquery-rails
   oauth2

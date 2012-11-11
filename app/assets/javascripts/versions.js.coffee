@@ -42,14 +42,18 @@ $ ->
 			supplied: "mp3, oga"
 			cssSelectorAncestor: "#jp_container_" + id
 
+	token = $('#version_token').val()
+	client_id = $('#version_client_id').val()
+	client_secret = $('#version_client_secret').val()
 
 
 	$('.direct-upload').fileupload
-		url: $(this).attr("action")
+		url: "https://api.soundcloud.com/tracks"
 		type: "POST"
+		dataType: "json"
+		async: true
 		autoUpload: true
 		dropZone: $('#bounced-file-target')
-		dataType: "xml" # This is really important as s3 gives us back the url of the file in a XML document
 		dragover: ->
 			$(this).closest('.dropZone').addClass('hoverdrop')
 
@@ -60,19 +64,6 @@ $ ->
 			if types.test(file.type) || types.test(file.name)
 				data.context = $(tmpl("template-upload", file))
 				$('.progress-container').append(data.context)
-				$.ajax
-					url: "/signed_urls"
-					type: "GET"
-					dataType: "json"
-					data: {doc: {title: data.files[0].name}}
-					async: false
-					success: (data) ->
-						window.key = data.key
-						# Now that we have our data, we update the form so it contains all
-						# the needed data to sign the request
-						$('#bounced-file-target').find("input[name=key]").val data.key
-						$('#bounced-file-target').find("input[name=policy]").val data.policy
-						$('#bounced-file-target').find("input[name=signature]").val data.signature
 
 				data.submit()
 
@@ -92,9 +83,10 @@ $ ->
 			console.log "fail"
 
 		success: (data) ->
-
+			console.log data
+			window.response = data
 		# Here we get the file url on s3 in an xml doc
-			url = $(data).find("Location").text()
+			url = data.permalink_url
 			$("#real_audio_file	").val url # Update the real input in the other form
 
 		done: (event, data) ->

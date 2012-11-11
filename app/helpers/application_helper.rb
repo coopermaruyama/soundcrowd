@@ -1,10 +1,7 @@
 module ApplicationHelper
-	
 	def avatar(user)
-    if FileTest.exist?("#{Rails.root}/app/assets/images/avatars/#{user.id}.png")
-  		then image_tag "avatars/#{user.id}.png", :size => "80x80", :class => "avatar" 
-  		else image_tag "avatars/_default.png", :size => "80x80", :class => "avatar" 
-  	end
+    response = HTTParty.get("http://api.soundcloud.com/users/#{user.uid}.json?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}")
+  	image_tag response['avatar_url'], :size => "80x80", :class => "avatar" 
   end
 	  
   def logo
@@ -27,8 +24,12 @@ module ApplicationHelper
     track_url = version.audio_file
     embed_info = client.get('/oembed', 
       :url => track_url,
+      :show_artwork => false,
+      :show_bpm => true,
+      :show_comments =>true,
+      :download => true,
       :maxwidth => "440px",
-      :maxheight => "110px")
+      :maxheight => "160px")
 
     # print the html for the player widget
     return embed_info['html']

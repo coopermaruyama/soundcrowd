@@ -12,7 +12,8 @@ class VersionsController < ApplicationController
 	end
 	
 	def create
-		@version = Version.create!(params[:version])
+		@version = Version.new(params[:version])
+		@version.save!
 		@production = Production.find(params[:version][:production_id])
 		redirect_to(@production)
 	end

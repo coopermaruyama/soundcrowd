@@ -27,3 +27,53 @@
 	# 			oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
 	# 	swfPath: "/assets"
 	# 	supplied: "mp3, oga"
+$ ->
+	$('.direct-upload').fileupload
+		url: "https://api.soundcloud.com/tracks"
+		type: "POST"
+		dataType: "json"
+		async: true
+		autoUpload: true
+		dropZone: $('#bounced-file-target')
+		dragover: ->
+			$(this).closest('.dropZone').addClass('hoverdrop')
+
+		add: (event, data) ->
+			$(this).closest('.dropZone').fadeOut(500)
+			types = /(\.|\/)(mp3|wav|aiff|m4a)$/i
+			file = data.files[0]
+			d = SC.prepareRequestURI("/tracks", file)
+			d.query.format = "json"
+			SC.Helper.setFlashStatusCodeMaps(d.query)
+			c = d.flattenParams(d.query)
+			if types.test(file.type) || types.test(file.name)
+				data.context = $(tmpl("template-upload", file))
+				$('.progress-container').append(data.context)
+
+				data.submit()
+
+		send: (e, data) ->
+
+		progress: (e, data) ->
+			if data.context
+				progress = parseInt(data.loaded / data.total * 100, 10)
+				data.context.find('.bar').css('width', progress + '%')
+		# This is what makes everything really cool, thanks to that callback
+		# you can now update the progress bar based on the upload progress
+			# percent = Math.round((e.loaded / e.total) * 100)
+			# $(".bar").css "width", percent + "%"
+
+		fail: (e, data) ->
+			console.log "fail"
+
+		success: (data) ->
+			console.log data.permalink_url
+			url = $(data).find("permalink_url").text()
+			$("#real_audio_file").val url # Update the real input in the other form
+
+		done: (event, data) ->
+			console.log data
+			$('.ui-progress-bar').fadeOut 400
+
+	dropleft = -parseInt($('.drop-text').width()) / 2 + "px"
+	$('.drop-text').css('margin-left', dropleft)	
