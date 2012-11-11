@@ -17,6 +17,9 @@ $ ->
 	# 		if data.context
 	# 			progress = parseInt(data.loaded / data.total * 100, 10)
 	# 			data.context.find('.bar').css('width', progress + '%')
+
+	$('#version_title').keyup ->
+		$('input[name=track\\[title\\]]').val $(this).val()
 	$(document).bind 'drop dragover', (e) ->
 	    e.preventDefault()
 	# $('.dropZone').bind 'fileuploaddragover', (e) ->

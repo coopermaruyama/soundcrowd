@@ -12,8 +12,8 @@ Soundcrowd::Application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   match '/signup', :to => 'users#new'
   root :to => "home#index"
-  
-  match "/productions/:production_id/:controller/:id/:action" #productions/30/versions/30/new
+  resources :version_votes
+  match "/productions/:production_id/:controller/:id/:action"
   resources :productions do
     resources :versions
   end

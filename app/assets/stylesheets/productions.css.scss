@@ -180,6 +180,49 @@ h2 {
 		max-width:75px;
 		margin: 5px 5px 0px 0px;
 	}
+
+	.votes {
+		position: absolute;
+		right: -268px;
+		bottom: 39px;
+		margin-top: -54px;
+		text-align: center;
+		h3 {
+			text-align: center;
+			font-size:78px;
+			span {
+				color:#d59f53;
+			}
+		}
+		h3.feature {
+			font-size: 27px;
+			margin-top: -27px;
+		}
+		&#feature {
+			bottom: 16px;
+			img {
+				&.down {
+				margin-top: 4px;
+				}
+				&.up {
+					margin-bottom: -11px;
+				}
+			}
+		}
+		img {
+			opacity:.5;
+			@include transition(1s opacity);
+			&:hover {
+				opacity:1;
+			}
+			&.down {
+				margin-top: -13px;
+			}
+			&.up {
+				margin-bottom: -9px;
+			}
+		}
+	}
 	
 	.jp-audio {
 		width: 436px;

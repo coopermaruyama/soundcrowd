@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108081907) do
+ActiveRecord::Schema.define(:version => 20121111133211) do
 
   create_table "productions", :force => true do |t|
     t.string   "title"
@@ -60,16 +60,24 @@ ActiveRecord::Schema.define(:version => 20121108081907) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
+  create_table "version_votes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "version_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "versions", :force => true do |t|
     t.string   "source_file"
     t.string   "audio_file"
     t.integer  "production_id"
     t.integer  "user_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.string   "title"
     t.string   "ancestry"
     t.string   "waveform"
+    t.integer  "votes",         :default => 0
   end
 
   add_index "versions", ["ancestry"], :name => "index_versions_on_ancestry"

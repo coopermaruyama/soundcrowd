@@ -1,5 +1,6 @@
 class Version < ActiveRecord::Base
 	has_ancestry
+	has_many :version_votes
 	belongs_to :user_production
 
 	# mount_uploader :audio_file, AudioUploader #for uploading audio files
@@ -11,12 +12,22 @@ class Version < ActiveRecord::Base
 	before_create :generate_title
 	# after_save :generate_waveform
 
-	attr_accessible :title, :user_id, :forked_from, :audio_file, :source_file, :production_id, :parent_id, :remote_audio_file_url, :remote_source_file_url, :waveform, :remote_waveform_url #remote attr's are used for being able to use carrierwave's remote file upload helpers.
+	attr_accessible :title, :user_id, :forked_from, :audio_file, :source_file, :production_id, :parent_id, :remote_audio_file_url, :remote_source_file_url, :waveform, :remote_waveform_url, :votes #remote attr's are used for being able to use carrierwave's remote file upload helpers.
 
 	def generate_title
 		if self.title.blank?
 			self.title = rand(999).to_s
 		end
+	end
+
+	def vote_up
+		self.votes = self.votes + 1
+		self.save
+	end
+
+	def vote_down
+		self.votes = self.votes - 1
+		self.save
 	end
 	
 	def user

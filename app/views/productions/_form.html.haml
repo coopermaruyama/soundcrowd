@@ -4,7 +4,7 @@
 %form{:multipart => true,:class => "direct-upload"}
 	%input{:type => "file", :id => "", :name => "track[asset_data]",:style => "display:none;"}
 	%input{:type => "hidden", :value => current_user.token, :name => "oauth_token"}
-	%input{:type => "hidden", :value => "test", :name => "track[title]"}
+	%input{:type => "hidden", :name => "track[title]"}
 .progress-container
 = form_for @production, :html => {:multipart => true, :id => "new_production"} do |f|
 	= f.label :title
