@@ -1,0 +1,1 @@
+$("#follow_form").html("<%= escape_javascript(render('shared/unfollow_production')) %>").fadeIn(500)

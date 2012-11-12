@@ -44,6 +44,19 @@ class User < ActiveRecord::Base
  	def unfollow! (other_user)
  		relationships.find_by_followed_id(other_user.id).destroy
  	end
+
+ 	def following_production?(production)
+ 		production_follows.find_by_production_id(production.id)
+ 	end
+
+ 	def follow_production!(production)
+ 		production_follows.create!(production_id: production.id)	
+ 	end
+
+ 	def unfollow_production! (production)
+ 		production_follows.find_by_production_id(production.id).destroy
+ 	end
+ 	
 end
 # == Schema Information
 #

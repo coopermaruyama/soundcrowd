@@ -1,0 +1,4 @@
+= form_for(current_user.production_follows.find_by_production_id(@production),html: {method: :delete, class: "follow"}, remote: true) do |f|
+	= button_tag(:type => "submit", class: "btn-action lighten active") do
+		= image_tag('icons/18px/smiley.png',:class => "icon follow")
+		= "unfollow"

@@ -9,7 +9,7 @@
 			= "By:" 
 			= link_to @production.creator.username , @production.creator
 	.actions
-		= link_to image_tag('icons/18px/smiley.png',:class => "icon follow")+"follow", "#", :class => "follow"
+		= render "shared/production_follow_form", :production => @production
 .clr
 
 #main
