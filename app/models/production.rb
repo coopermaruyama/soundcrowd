@@ -1,6 +1,8 @@
 class Production < ActiveRecord::Base
 	has_many :versions
 	has_many :user_productions
+	has_many :production_followers
+	has_many :followers, :through => :production_followers, :source => :user
 	has_many :users, :through => :user_productions
 	accepts_nested_attributes_for :versions
 	after_create :identify_first_version

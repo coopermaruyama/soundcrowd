@@ -8,7 +8,8 @@
 		%span.creator-info
 			= "By:" 
 			= link_to @production.creator.username , @production.creator
-
+	.actions
+		= link_to image_tag('icons/18px/smiley.png',:class => "icon follow")+"follow", "#", :class => "follow"
 .clr
 
 #main
@@ -30,3 +31,22 @@
 	.project-main
 		= render :partial => "production" 
 .clr
+:javascript
+	$(function() {
+		var actions = [];
+		$('.player-target').each(function(i,v) {
+			actions.push(function(callback) {
+				var id = $(v).attr('id');
+				$.ajax({
+					url: "/scplayer/"+id,
+					cache: false,
+					success: function(html) {
+						$(".player-target#"+id).html(html);
+						callback();
+					}
+				});
+			});
+		});
+		var sequencer = new Sequencer(actions);
+		sequencer.start();
+	});

@@ -16,12 +16,14 @@ class User < ActiveRecord::Base
  																		class_name: "Relationship",
  																		dependent: :destroy
  	has_many :followers, through: :reverse_relationships, source: :follower
+ 	has_many :production_follows, :class_name => "ProductionFollower"
 
  	def self.find_for_soundcloud_oauth(auth, signed_in_resource=nil)
  		user = User.where(:provider => auth.provider, :uid => auth.uid).first
  		unless user
  			user = User.create!(
  				provider: auth.provider,
+ 				email: "#{auth.uid}@soundcloud.com",
  				uid: auth.uid,
  				username: auth.extra.raw_info.username,
  				password: auth.credentials.token,

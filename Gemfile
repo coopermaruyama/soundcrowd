@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
+gem "unicorn"
 
 gem "fog", "~> 1.3.1"
 gem 'sass'
@@ -14,7 +15,7 @@ gem 'omniauth-soundcloud'
 gem "soundcloud", :git => "git://github.com/soundcloud/soundcloud-ruby.git"
 gem "resque"
 gem "ancestry"
-
+gem "rack-mini-profiler"
 gem "waveform", :git => "git://github.com/coopermaruyama/waveform.git" #for creating waveform images
 gem "oily_png" #png manipulation for waveform
 gem "ffmpeg" #for converting to wav

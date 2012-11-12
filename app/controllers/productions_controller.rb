@@ -21,5 +21,6 @@ class ProductionsController < ApplicationController
   def show
     @production = Production.find(params[:id])
     @feature = @production.versions.find(:all).sort { |x,y| x.version_votes.size <=> y.version_votes.size }.last
+    @client = Soundcloud.new(:client_id => ENV['SOUNDCLOUD_CLIENT_ID'])
   end
 end

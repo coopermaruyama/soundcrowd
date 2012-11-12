@@ -8,6 +8,7 @@ Soundcrowd::Application.routes.draw do
       get :following, :followers
     end
   end
+  resources :scplayer
   resources :signed_urls, only: :index
   resources :relationships, only: [:create, :destroy]
   match '/signup', :to => 'users#new'

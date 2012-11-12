@@ -30,6 +30,8 @@
 $ ->
 	$('#version_title').keyup ->
 		$('input[name=track\\[title\\]]').val $(this).val()
+
+
 	$('.direct-upload').fileupload
 		url: "https://api.soundcloud.com/tracks"
 		type: "POST"
@@ -79,3 +81,5 @@ $ ->
 
 	dropleft = -parseInt($('.drop-text').width()) / 2 + "px"
 	$('.drop-text').css('margin-left', dropleft)	
+#
+

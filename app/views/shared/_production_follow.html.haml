@@ -1,0 +1,5 @@
+= form_for(current_user.production_follows.build(production_id: @production.id), :html => { class: "follow" }, remote: true) do |f|
+	= f.hidden_field :production_id
+	%button{:type => "submit", class: "btn-action ligthen"}
+		= image_tag('icons/18px/smiley.png',:class => "icon follow")
+		= "follow"

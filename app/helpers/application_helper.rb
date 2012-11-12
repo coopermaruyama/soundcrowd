@@ -14,12 +14,9 @@ module ApplicationHelper
     end.join.html_safe
   end
 
-  def sc_player(version)
-    require 'soundcloud'
+  def sc_player(version, client)
     user = User.find(version.user_id)
     # create a client object with your app credentials
-    client = Soundcloud.new(:client_id => user.token)
-
     # get a tracks oembed data
     track_url = version.audio_file
     begin
