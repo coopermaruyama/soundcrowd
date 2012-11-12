@@ -6,9 +6,7 @@
 		%span.version-user
 			.clr
 			- @user = version.user
-			= render "shared/follow_form", :user => @user
-
-			
+			= render "shared/follow_form", :user => @user			
 		%span
 	.clr
 	.player-target{:id => version.id}

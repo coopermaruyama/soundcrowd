@@ -1,7 +1,6 @@
 module ApplicationHelper
 	def avatar(user)
-    response = HTTParty.get("http://api.soundcloud.com/users/#{user.uid}.json?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}")
-  	image_tag response['avatar_url'], :size => "80x80", :class => "avatar" 
+  	image_tag user.avatar_url, :size => "80x80", :class => "avatar" 
   end
 	  
   def logo
