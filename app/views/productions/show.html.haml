@@ -41,7 +41,7 @@
 					url: "/scplayer/"+id,
 					cache: false,
 					success: function(html) {
-						$(".player-target#"+id).html(html);
+						$(".player-target#"+id).fadeOut(500).html(html).fadeIn(500);
 						callback();
 					}
 				});
