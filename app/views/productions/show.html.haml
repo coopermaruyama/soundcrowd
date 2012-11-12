@@ -16,8 +16,8 @@
 	.project-left
 		.label-left
 			%h2 120
-			%h2= @production.versions.length
-			%h2= "XX"
+			%h2#production_versions= @production.versions.size
+			%h2#production_followers= @production.followers.size
 		.label-right
 			%h2
 				%span.label
