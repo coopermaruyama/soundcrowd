@@ -1,0 +1,3 @@
+$(".vote-count span.<%= @version.id %>").fadeOut(500, function() {
+	$(this).html("<%= @version.plusminus %>").fadeIn(500);
+});

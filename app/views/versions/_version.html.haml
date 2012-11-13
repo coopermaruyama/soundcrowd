@@ -13,12 +13,4 @@
 		.processing
 			= image_tag('ajax-loader.gif')
 	= render :partial => "player", :locals => { :version => version }
-	.votes{:id => "#{'feature' if version == @feature}"}
-		= link_to image_tag('icons/32px/arrow-up.png', :class => "up"), version_votes_path('version_vote[version_id]' => version.id), :method => :post, :remote => true
-		%h3.vote-count
-			%span{:class => "#{version.id}"}= version.version_votes.size
-			votes
-		- if version == @feature
-			%h3.feature
-				%span *Current Feature
-		= link_to image_tag('icons/32px/arrow-down.png',:class => "down"), version
+	= render :partial => "shared/vote", :locals => { :version => version }

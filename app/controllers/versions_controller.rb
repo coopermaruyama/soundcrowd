@@ -22,5 +22,23 @@ class VersionsController < ApplicationController
 
 	def destroy
 	end
+	def vote_up
+    @version = Version.find(params[:id])
+    current_user.unvote_for(@version) if current_user.voted_on?(@version)
+    current_user.vote_for(@version)
+    respond_to do |format|
+      format.js
+      format.html {redirect_to :back}
+    end
+  end
 
+  def vote_down
+    @version = Version.find(params[:id])
+    current_user.unvote_for(@version) if current_user.voted_on?(@version)
+    current_user.vote_against(@version)
+    respond_to do |format|
+      format.js
+      format.html {redirect_to :back}
+    end
+  end
 end

@@ -1,5 +1,6 @@
 class Version < ActiveRecord::Base
 	has_ancestry
+	acts_as_voteable
 	has_many :version_votes
 	belongs_to :user_production
 

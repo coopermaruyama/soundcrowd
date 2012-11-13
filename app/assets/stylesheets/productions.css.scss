@@ -248,6 +248,7 @@ h2 {
 		}
 		img {
 			opacity:.5;
+			cursor:pointer;
 			@include transition(1s opacity);
 			&:hover {
 				opacity:1;
@@ -257,6 +258,14 @@ h2 {
 			}
 			&.up {
 				margin-bottom: 4px;
+			}
+		}
+		.ratelink.disabled img{
+			opacity:.1 !important;
+			cursor:default;
+			&:hover {
+				opacity:.1 !important;
+
 			}
 		}
 	}

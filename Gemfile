@@ -20,7 +20,7 @@ gem "waveform", :git => "git://github.com/coopermaruyama/waveform.git" #for crea
 gem "oily_png" #png manipulation for waveform
 gem "ffmpeg" #for converting to wav
 gem 'ruby-audio-heroku', :git => "git://github.com/khurramzaman/ruby-audio-heroku.git"
-# gem "icanhasaudio", :git => "git://github.com/harukasan/icanhasaudio.git"
+gem "thumbs_up"
 
 gem "carrierwave"       #handle uploads
 gem "carrierwave_direct"

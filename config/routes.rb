@@ -8,6 +8,8 @@ Soundcrowd::Application.routes.draw do
       get :following, :followers
     end
   end
+  put "versions/vote_up", :to => "versions#vote_up"
+  put "versions/vote_down", :to => "versions#vote_down"
   resources :scplayer
   resources :signed_urls, only: :index
   resources :production_followers, only: [:create, :destroy]
@@ -20,5 +22,7 @@ Soundcrowd::Application.routes.draw do
     resources :versions
   end
   resources :versions
+  
+
   match '*path', to: 'main#index'
 end
