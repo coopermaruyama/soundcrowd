@@ -79,6 +79,9 @@ body,html {
 
 
 	box-shadow:inset 20px 0 20px -26px #444, inset -20px 0 20px -26px #444;
+	.version:first-child {
+		margin-top: 2px;
+	}
 }
 .avatar {
 	width: 80px;
@@ -164,6 +167,7 @@ h2 {
 	width:436px;
 	margin: 10px;
 	position: relative;
+	margin-top: 45px;
 
 	iframe {
 		margin-top:5px;
@@ -171,8 +175,8 @@ h2 {
 	
 	.processing {
 		width: 400px;
-		height: 50px;
-		padding: 45px 20px;
+		height: 40px;
+		padding: 62px 20px;
 		background-color: #E9E9E9;
 		border-radius: 5px;
 		border: 1px solid #d5d5d5;
