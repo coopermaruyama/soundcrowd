@@ -1,13 +1,15 @@
-.votes{:id => "#{'feature' if version == @feature}"}
-	- upstate = "disabled" if current_user.voted_for?(version)
-	%a{:class => "ratelink #{upstate}", :updown => "up", :theid => version.id}
-		= image_tag('icons/32px/arrow-up.png', :class => "up")
+.votes{:id => "#{'feature' if version == @feature}", :class => "#{'public' unless user_signed_in?}"}
+	- if user_signed_in?
+		- upstate = "disabled" if current_user.voted_for?(version)
+		%a{:class => "ratelink #{upstate}", :updown => "up", :theid => version.id}
+			= image_tag('icons/32px/arrow-up.png', :class => "up")
 	%h3.vote-count
 		%span{:class => "#{version.id}"}= version.plusminus
 		votes
 	- if version == @feature
 		%h3.feature
 			%span *Current Feature
-	- downstate = "disabled" if current_user.voted_against?(version)
-	%a{:class => "ratelink #{downstate}", :updown => "down", :theid => version.id, :href => "#"}
-		= image_tag('icons/32px/arrow-down.png', :class => "down")
+	- if user_signed_in?
+		- downstate = "disabled" if current_user.voted_against?(version)
+		%a{:class => "ratelink #{downstate}", :updown => "down", :theid => version.id, :href => "#"}
+			= image_tag('icons/32px/arrow-down.png', :class => "down")

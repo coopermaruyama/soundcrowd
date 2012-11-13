@@ -228,6 +228,12 @@ h2 {
 		bottom: 39px;
 		margin-top: -54px;
 		text-align: center;
+		&.public {
+			bottom:68px;
+			&#feature {
+				bottom: 55px;
+			}
+		}
 		h3 {
 			text-align: center;
 			font-size:78px;
