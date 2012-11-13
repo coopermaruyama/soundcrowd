@@ -27,7 +27,7 @@ module ApplicationHelper
         :download => true,
         :maxwidth => "440px",
         :maxheight => "160px")
-      return embed_info['html']
+      return embed_info['html'].gsub("http://w","https://w")
     rescue
       return "<div class='processing'>This track is still processing. Check back soon.</div>"
     end
