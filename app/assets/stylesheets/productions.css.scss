@@ -117,16 +117,27 @@ h2 {
 
 
 .nested_versions {
+	.version {
+		.branch {
+			z-index: -1;
+			background: image-url('branch-child.png') no-repeat 0 0;
+			width: 42px;
+			height: 364px;
+			position: absolute;
+			left: -40px;
+			top:-209px;
+		}
+	}
 	.version:first-child {
 		margin-top: 45px;
 		.branch {
 			z-index: -1;
-			background: url('/assets/branch-line.png') no-repeat 0 0;
-			width: 119px;
-			height: 246px;
+			background: image-url('branch-parent.png') no-repeat 0 0;
+			width: 78px;
+			height: 230px;
 			position: absolute;
-			left: -85px;
-			top:-95px;
+			left: -76px;
+			top:-78px;
 		}
 	}
 }
