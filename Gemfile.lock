@@ -156,6 +156,10 @@ GEM
       guard (>= 0.10.0)
       spork (>= 0.8.4)
     haml (3.1.6)
+    haml_coffee_assets (1.7.2)
+      coffee-script (>= 1.0.0)
+      sprockets (>= 2.0.3)
+      tilt (>= 1.3.3)
     hashie (1.2.0)
     hike (1.2.1)
     httmultiparty (0.3.8)
@@ -331,6 +335,7 @@ DEPENDENCIES
   cucumber-rails (>= 1.2.1)
   database_cleaner
   devise!
+  execjs
   factory_girl_rails (= 3.3.0)
   faker
   ffmpeg
@@ -339,6 +344,7 @@ DEPENDENCIES
   guard-rspec
   guard-spork
   haml
+  haml_coffee_assets
   httparty
   jquery-fileupload-rails
   jquery-rails

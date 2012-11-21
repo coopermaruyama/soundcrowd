@@ -21,13 +21,14 @@ module ApplicationHelper
     begin
       embed_info = client.get('/oembed', 
         :url => track_url,
-        :show_artwork => false,
+        :show_artwork => "false",
         :show_bpm => true,
         :show_comments =>true,
         :download => true,
         :maxwidth => "440px",
         :maxheight => "160px")
-      return embed_info['html'].gsub("http://w","https://w")
+      embed_info['html'] = embed_info['html'].gsub('show_artwork=true&','') if embed_info['html'].match('show_artwork=true&').length
+      return embed_info['html']
     rescue
       return "<div class='processing'>This track is still processing. Check back soon.</div>"
     end

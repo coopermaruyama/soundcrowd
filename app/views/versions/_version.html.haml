@@ -2,7 +2,9 @@
 	.branch
 	= avatar(version.user)
 	.version-info
-		%h3.version-title= version.user.username
+		%h3.version-title
+			%span= version.title
+			= " by #{version.user.username}"
 		%span.version-user
 			.clr
 			- @user = version.user

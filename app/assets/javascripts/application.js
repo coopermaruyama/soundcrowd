@@ -17,6 +17,7 @@
 //= require jquery.jplayer.min
 //= require underscore
 //= require backbone
+//= require hamlcoffee
 //= require .//soundcrowd
 //= require_tree ../templates/
 //= require_tree .//models

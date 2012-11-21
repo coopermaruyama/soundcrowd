@@ -178,7 +178,7 @@ h2 {
 	width:436px;
 	margin: 10px;
 	position: relative;
-	margin-top: 45px;
+	margin-top: 59px;
 
 	iframe {
 		margin-top:5px;
@@ -202,8 +202,9 @@ h2 {
 
 
 	.version-info {
-		width:345px;
+		width:365px;
 		float:right;
+		padding-top: 5px;
 		a:link, a,a:visited {
 			color:$blue;
 		}
@@ -225,11 +226,16 @@ h2 {
 				margin-left: 1px !important;
 			}
 		}
-		
+		.version-title {
+			color: black;
+			span{
+				color: $orange;
+			}
+		}
 	}
 	.avatar {
-		max-height:75px;
-		max-width:75px;
+		max-height:60px;
+		max-width:60px;
 		margin: 5px 5px 0px 0px;
 	}
 

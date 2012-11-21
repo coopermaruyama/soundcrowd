@@ -4,25 +4,40 @@
 		You are about to fork 
 		%span.em #{@parent.user.username}'s 
 		version of #{@production.title} 
-	/ %h3 Upload the your track in .als format below
-	/ #source-target.dropZone
-	/ 	%h2.drop-text Drop File Here
+	%p
+		%strong Make sure you have both the producition file and bounced file available before proceeding!
+	%h3 Name your Track
+	%label Title:
+	%input{:type => "text", :id => "title"}
+	%h3 Upload the your track in .als format below
+	#source-target.dropZone
+		%h2.drop-text Drop File Here
+		%form{:action => "https://#{ENV['AWS_S3_BUCKET']}.s3.amazonaws.com", :method => "post", :enctype => "multipart/form-data", :class => 'direct-upload', :id => "source-file"}
+			%input{type: :hidden, name: :key}
+			%input{type: :hidden, name: "AWSAccessKeyId", value: ENV['AWS_ACCESS_KEY_ID']}
+			%input{type: :hidden, name: :acl, value: 'public-read'}
+			%input{type: :hidden, name: :policy}
+			%input{type: :hidden, name: :signature}
+			%input{type: :hidden, name: :success_action_status, value: "201"}
+
+			%input{type: :file, name: :file , style: "display:none;"}
+	.progress-container-source
 
 	%h3 Upload the bounced version of your track below
 	#bounced-file-target.dropZone
 		%h2.drop-text Drop File Here
-	%form{:multipart => true,:class => "direct-upload"}
+	%form{:multipart => true,:class => "direct-upload", :id => "bounced-file"}
 		%input{:type => "file", :id => "", :name => "track[asset_data]",:style => "display:none;"}
 		%input{:type => "hidden", :value => current_user.token, :name => "oauth_token"}
 		%input{:type => "hidden", :value => "test", :name => "track[title]"}
-	.progress-container
+	.progress-container-version
 	= form_for @version, :html => {:multipart => true, :id => "new_version",:class => ""} do |f|
 		= f.hidden_field :audio_file, :id => "real_audio_file"
+		= f.hidden_field :source_file, :id => "real_source_file"
 		= f.hidden_field :user_id
 		= f.hidden_field :production_id
 		= f.hidden_field :parent_id
-		= f.label :title
-		= f.text_field :title
+		= f.hidden_field :title, :id => "real_title"
 		= f.submit
 		%script#template-upload{:type => "text/x-tmpl"}
 			.upload.ui-progress-bar

@@ -16,7 +16,7 @@ class ProductionsController < ApplicationController
 
   def create
 
-    @production = current_user.productions.new([:production].merge(:creator_id => current_user.id))
+    @production = current_user.productions.new(params[:production].merge(:creator_id => current_user.id))
     @production.save!
     redirect_to(@production)
   end  
@@ -27,10 +27,6 @@ class ProductionsController < ApplicationController
     @production = Production.find(params[:id])
     @feature = @production.versions.find(:all).sort { |x,y| x.version_votes.size <=> y.version_votes.size }.last
     @client = Soundcloud.new(:client_id => ENV['SOUNDCLOUD_CLIENT_ID'])
-    respond_to do |format|
-      format.html
-      format.json { render :json => @production.to_json }
-    end
   end
 
 end
