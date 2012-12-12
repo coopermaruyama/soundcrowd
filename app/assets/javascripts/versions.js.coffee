@@ -69,7 +69,7 @@ $ ->
 
 		add: (event, data) ->
 			$(this).closest('.dropZone').fadeOut(500)
-			types = /(\.|\/)(mp3|wav|aiff|m4a)$/i
+			types = /(\.|\/)(mp3|wav|aiff|m4a|zip)$/i
 			file = data.files[0]
 			if types.test(file.type) || types.test(file.name)
 				data.context = $(tmpl("template-upload", file))

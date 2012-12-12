@@ -44,7 +44,7 @@ $ ->
 
 		add: (event, data) ->
 			$(this).closest('.dropZone').fadeOut(500)
-			types = /(\.|\/)(mp3|wav|aiff|m4a)$/i
+			types = /(\.|\/)(mp3|wav|aiff|m4a|zip)$/i
 			file = data.files[0]
 			d = SC.prepareRequestURI("/tracks", file)
 			d.query.format = "json"
