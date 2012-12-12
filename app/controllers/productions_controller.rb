@@ -16,7 +16,7 @@ class ProductionsController < ApplicationController
 
   def create
 
-    @production = current_user.productions.new([:production].merge(:creator_id => current_user.id))
+    @production = current_user.productions.new(params[:production].merge(:creator_id => current_user.id))
     @production.save!
     redirect_to(@production)
   end  
