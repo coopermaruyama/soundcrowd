@@ -28,6 +28,7 @@ module ApplicationHelper
         :maxwidth => "440px",
         :maxheight => "160px")
       embed_info['html'] = embed_info['html'].gsub('show_artwork=true&','') if embed_info['html'].match('show_artwork=true&').length
+      embed_info['html'].gsub("http:","https:") unless embed_info['html'].match('https:') #probably a bug with soundcloud
       return embed_info['html']
     rescue
       return "<div class='processing'>This track is still processing. Check back soon.</div>"
