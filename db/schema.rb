@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(:version => 20121113053409) do
     t.string   "source_file"
     t.string   "audio_file"
     t.integer  "production_id"
-    t.integer  "user_id"
+    t.integer  "user_id",       :null => false
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.string   "title"
